@@ -192,5 +192,10 @@ namespace FFLApp
         {
 
         }
+
+        private void commitFixBtn_Click(object sender, EventArgs e)
+        {
+            // Test part - added by Lisa
+        }
     }
 }
