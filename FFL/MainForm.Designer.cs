@@ -60,68 +60,68 @@
             this.awayCB4 = new System.Windows.Forms.ComboBox();
             this.homeCB4 = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.homeLbl1 = new System.Windows.Forms.Label();
-            this.awayLbl1 = new System.Windows.Forms.Label();
-            this.homeLbl2 = new System.Windows.Forms.Label();
-            this.awayLbl2 = new System.Windows.Forms.Label();
-            this.homeLbl3 = new System.Windows.Forms.Label();
-            this.awayLbl3 = new System.Windows.Forms.Label();
-            this.homeLbl4 = new System.Windows.Forms.Label();
-            this.awayLbl4 = new System.Windows.Forms.Label();
-            this.homeLbl5 = new System.Windows.Forms.Label();
-            this.awayLbl5 = new System.Windows.Forms.Label();
-            this.homeLbl6 = new System.Windows.Forms.Label();
-            this.awayLbl6 = new System.Windows.Forms.Label();
-            this.homeLbl7 = new System.Windows.Forms.Label();
-            this.awayLbl7 = new System.Windows.Forms.Label();
-            this.homeLbl8 = new System.Windows.Forms.Label();
-            this.awayLbl8 = new System.Windows.Forms.Label();
-            this.homeLbl9 = new System.Windows.Forms.Label();
-            this.awayLbl9 = new System.Windows.Forms.Label();
-            this.homeLbl10 = new System.Windows.Forms.Label();
-            this.awayLbl10 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown13 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown14 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown16 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown17 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown17 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown16 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown14 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown13 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.awayLbl10 = new System.Windows.Forms.Label();
+            this.homeLbl10 = new System.Windows.Forms.Label();
+            this.awayLbl9 = new System.Windows.Forms.Label();
+            this.homeLbl9 = new System.Windows.Forms.Label();
+            this.awayLbl8 = new System.Windows.Forms.Label();
+            this.homeLbl8 = new System.Windows.Forms.Label();
+            this.awayLbl7 = new System.Windows.Forms.Label();
+            this.homeLbl7 = new System.Windows.Forms.Label();
+            this.awayLbl6 = new System.Windows.Forms.Label();
+            this.homeLbl6 = new System.Windows.Forms.Label();
+            this.awayLbl5 = new System.Windows.Forms.Label();
+            this.homeLbl5 = new System.Windows.Forms.Label();
+            this.awayLbl4 = new System.Windows.Forms.Label();
+            this.homeLbl4 = new System.Windows.Forms.Label();
+            this.awayLbl3 = new System.Windows.Forms.Label();
+            this.homeLbl3 = new System.Windows.Forms.Label();
+            this.awayLbl2 = new System.Windows.Forms.Label();
+            this.homeLbl2 = new System.Windows.Forms.Label();
+            this.awayLbl1 = new System.Windows.Forms.Label();
+            this.homeLbl1 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.homeScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.awayScore)).BeginInit();
             this.Tab1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // commitFixBtn
@@ -132,6 +132,7 @@
             this.commitFixBtn.TabIndex = 0;
             this.commitFixBtn.Text = "Commit fixtures";
             this.commitFixBtn.UseVisualStyleBackColor = true;
+            this.commitFixBtn.Click += new System.EventHandler(this.commitFixBtn_Click);
             this.commitFixBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mouseClickFn);
             // 
             // textBox1
@@ -465,186 +466,131 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // tabPage3
+            // numericUpDown18
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(859, 505);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Attack Summary";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.numericUpDown18.Location = new System.Drawing.Point(125, 270);
+            this.numericUpDown18.Name = "numericUpDown18";
+            this.numericUpDown18.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown18.TabIndex = 43;
             // 
-            // homeLbl1
+            // numericUpDown17
             // 
-            this.homeLbl1.AutoSize = true;
-            this.homeLbl1.Location = new System.Drawing.Point(28, 40);
-            this.homeLbl1.Name = "homeLbl1";
-            this.homeLbl1.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl1.TabIndex = 5;
-            this.homeLbl1.Text = "Liverpool";
+            this.numericUpDown17.Location = new System.Drawing.Point(84, 271);
+            this.numericUpDown17.Name = "numericUpDown17";
+            this.numericUpDown17.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown17.TabIndex = 42;
             // 
-            // awayLbl1
+            // numericUpDown16
             // 
-            this.awayLbl1.AutoSize = true;
-            this.awayLbl1.Location = new System.Drawing.Point(169, 42);
-            this.awayLbl1.Name = "awayLbl1";
-            this.awayLbl1.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl1.TabIndex = 6;
-            this.awayLbl1.Text = "Liverpool";
+            this.numericUpDown16.Location = new System.Drawing.Point(125, 245);
+            this.numericUpDown16.Name = "numericUpDown16";
+            this.numericUpDown16.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown16.TabIndex = 41;
             // 
-            // homeLbl2
+            // numericUpDown15
             // 
-            this.homeLbl2.AutoSize = true;
-            this.homeLbl2.Location = new System.Drawing.Point(28, 68);
-            this.homeLbl2.Name = "homeLbl2";
-            this.homeLbl2.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl2.TabIndex = 7;
-            this.homeLbl2.Text = "Liverpool";
+            this.numericUpDown15.Location = new System.Drawing.Point(84, 245);
+            this.numericUpDown15.Name = "numericUpDown15";
+            this.numericUpDown15.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown15.TabIndex = 40;
             // 
-            // awayLbl2
+            // numericUpDown14
             // 
-            this.awayLbl2.AutoSize = true;
-            this.awayLbl2.Location = new System.Drawing.Point(169, 68);
-            this.awayLbl2.Name = "awayLbl2";
-            this.awayLbl2.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl2.TabIndex = 8;
-            this.awayLbl2.Text = "Liverpool";
+            this.numericUpDown14.Location = new System.Drawing.Point(125, 221);
+            this.numericUpDown14.Name = "numericUpDown14";
+            this.numericUpDown14.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown14.TabIndex = 39;
             // 
-            // homeLbl3
+            // numericUpDown13
             // 
-            this.homeLbl3.AutoSize = true;
-            this.homeLbl3.Location = new System.Drawing.Point(28, 93);
-            this.homeLbl3.Name = "homeLbl3";
-            this.homeLbl3.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl3.TabIndex = 9;
-            this.homeLbl3.Text = "Liverpool";
+            this.numericUpDown13.Location = new System.Drawing.Point(84, 219);
+            this.numericUpDown13.Name = "numericUpDown13";
+            this.numericUpDown13.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown13.TabIndex = 38;
             // 
-            // awayLbl3
+            // numericUpDown12
             // 
-            this.awayLbl3.AutoSize = true;
-            this.awayLbl3.Location = new System.Drawing.Point(169, 93);
-            this.awayLbl3.Name = "awayLbl3";
-            this.awayLbl3.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl3.TabIndex = 10;
-            this.awayLbl3.Text = "Liverpool";
+            this.numericUpDown12.Location = new System.Drawing.Point(125, 193);
+            this.numericUpDown12.Name = "numericUpDown12";
+            this.numericUpDown12.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown12.TabIndex = 37;
             // 
-            // homeLbl4
+            // numericUpDown11
             // 
-            this.homeLbl4.AutoSize = true;
-            this.homeLbl4.Location = new System.Drawing.Point(28, 119);
-            this.homeLbl4.Name = "homeLbl4";
-            this.homeLbl4.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl4.TabIndex = 11;
-            this.homeLbl4.Text = "Liverpool";
+            this.numericUpDown11.Location = new System.Drawing.Point(84, 193);
+            this.numericUpDown11.Name = "numericUpDown11";
+            this.numericUpDown11.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown11.TabIndex = 36;
             // 
-            // awayLbl4
+            // numericUpDown10
             // 
-            this.awayLbl4.AutoSize = true;
-            this.awayLbl4.Location = new System.Drawing.Point(169, 119);
-            this.awayLbl4.Name = "awayLbl4";
-            this.awayLbl4.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl4.TabIndex = 12;
-            this.awayLbl4.Text = "Liverpool";
+            this.numericUpDown10.Location = new System.Drawing.Point(125, 170);
+            this.numericUpDown10.Name = "numericUpDown10";
+            this.numericUpDown10.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown10.TabIndex = 35;
             // 
-            // homeLbl5
+            // numericUpDown9
             // 
-            this.homeLbl5.AutoSize = true;
-            this.homeLbl5.Location = new System.Drawing.Point(28, 146);
-            this.homeLbl5.Name = "homeLbl5";
-            this.homeLbl5.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl5.TabIndex = 13;
-            this.homeLbl5.Text = "Liverpool";
+            this.numericUpDown9.Location = new System.Drawing.Point(84, 170);
+            this.numericUpDown9.Name = "numericUpDown9";
+            this.numericUpDown9.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown9.TabIndex = 34;
             // 
-            // awayLbl5
+            // numericUpDown8
             // 
-            this.awayLbl5.AutoSize = true;
-            this.awayLbl5.Location = new System.Drawing.Point(169, 146);
-            this.awayLbl5.Name = "awayLbl5";
-            this.awayLbl5.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl5.TabIndex = 14;
-            this.awayLbl5.Text = "Liverpool";
+            this.numericUpDown8.Location = new System.Drawing.Point(125, 146);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown8.TabIndex = 33;
             // 
-            // homeLbl6
+            // numericUpDown7
             // 
-            this.homeLbl6.AutoSize = true;
-            this.homeLbl6.Location = new System.Drawing.Point(28, 172);
-            this.homeLbl6.Name = "homeLbl6";
-            this.homeLbl6.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl6.TabIndex = 15;
-            this.homeLbl6.Text = "Liverpool";
+            this.numericUpDown7.Location = new System.Drawing.Point(84, 144);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown7.TabIndex = 32;
             // 
-            // awayLbl6
+            // numericUpDown6
             // 
-            this.awayLbl6.AutoSize = true;
-            this.awayLbl6.Location = new System.Drawing.Point(169, 172);
-            this.awayLbl6.Name = "awayLbl6";
-            this.awayLbl6.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl6.TabIndex = 16;
-            this.awayLbl6.Text = "Liverpool";
+            this.numericUpDown6.Location = new System.Drawing.Point(125, 120);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown6.TabIndex = 31;
             // 
-            // homeLbl7
+            // numericUpDown5
             // 
-            this.homeLbl7.AutoSize = true;
-            this.homeLbl7.Location = new System.Drawing.Point(28, 195);
-            this.homeLbl7.Name = "homeLbl7";
-            this.homeLbl7.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl7.TabIndex = 17;
-            this.homeLbl7.Text = "Liverpool";
+            this.numericUpDown5.Location = new System.Drawing.Point(84, 119);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown5.TabIndex = 30;
             // 
-            // awayLbl7
+            // numericUpDown4
             // 
-            this.awayLbl7.AutoSize = true;
-            this.awayLbl7.Location = new System.Drawing.Point(169, 195);
-            this.awayLbl7.Name = "awayLbl7";
-            this.awayLbl7.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl7.TabIndex = 18;
-            this.awayLbl7.Text = "Liverpool";
+            this.numericUpDown4.Location = new System.Drawing.Point(125, 94);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown4.TabIndex = 29;
             // 
-            // homeLbl8
+            // numericUpDown3
             // 
-            this.homeLbl8.AutoSize = true;
-            this.homeLbl8.Location = new System.Drawing.Point(28, 221);
-            this.homeLbl8.Name = "homeLbl8";
-            this.homeLbl8.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl8.TabIndex = 19;
-            this.homeLbl8.Text = "Liverpool";
+            this.numericUpDown3.Location = new System.Drawing.Point(84, 94);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown3.TabIndex = 28;
             // 
-            // awayLbl8
+            // numericUpDown2
             // 
-            this.awayLbl8.AutoSize = true;
-            this.awayLbl8.Location = new System.Drawing.Point(169, 221);
-            this.awayLbl8.Name = "awayLbl8";
-            this.awayLbl8.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl8.TabIndex = 20;
-            this.awayLbl8.Text = "Liverpool";
+            this.numericUpDown2.Location = new System.Drawing.Point(125, 68);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown2.TabIndex = 27;
             // 
-            // homeLbl9
+            // numericUpDown1
             // 
-            this.homeLbl9.AutoSize = true;
-            this.homeLbl9.Location = new System.Drawing.Point(28, 246);
-            this.homeLbl9.Name = "homeLbl9";
-            this.homeLbl9.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl9.TabIndex = 21;
-            this.homeLbl9.Text = "Liverpool";
-            // 
-            // awayLbl9
-            // 
-            this.awayLbl9.AutoSize = true;
-            this.awayLbl9.Location = new System.Drawing.Point(169, 246);
-            this.awayLbl9.Name = "awayLbl9";
-            this.awayLbl9.Size = new System.Drawing.Size(50, 13);
-            this.awayLbl9.TabIndex = 22;
-            this.awayLbl9.Text = "Liverpool";
-            // 
-            // homeLbl10
-            // 
-            this.homeLbl10.AutoSize = true;
-            this.homeLbl10.Location = new System.Drawing.Point(28, 272);
-            this.homeLbl10.Name = "homeLbl10";
-            this.homeLbl10.Size = new System.Drawing.Size(50, 13);
-            this.homeLbl10.TabIndex = 23;
-            this.homeLbl10.Text = "Liverpool";
+            this.numericUpDown1.Location = new System.Drawing.Point(84, 66);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(35, 20);
+            this.numericUpDown1.TabIndex = 26;
             // 
             // awayLbl10
             // 
@@ -655,131 +601,186 @@
             this.awayLbl10.TabIndex = 24;
             this.awayLbl10.Text = "Liverpool";
             // 
-            // numericUpDown1
+            // homeLbl10
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 66);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown1.TabIndex = 26;
+            this.homeLbl10.AutoSize = true;
+            this.homeLbl10.Location = new System.Drawing.Point(28, 272);
+            this.homeLbl10.Name = "homeLbl10";
+            this.homeLbl10.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl10.TabIndex = 23;
+            this.homeLbl10.Text = "Liverpool";
             // 
-            // numericUpDown2
+            // awayLbl9
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(125, 68);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown2.TabIndex = 27;
+            this.awayLbl9.AutoSize = true;
+            this.awayLbl9.Location = new System.Drawing.Point(169, 246);
+            this.awayLbl9.Name = "awayLbl9";
+            this.awayLbl9.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl9.TabIndex = 22;
+            this.awayLbl9.Text = "Liverpool";
             // 
-            // numericUpDown3
+            // homeLbl9
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(84, 94);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown3.TabIndex = 28;
+            this.homeLbl9.AutoSize = true;
+            this.homeLbl9.Location = new System.Drawing.Point(28, 246);
+            this.homeLbl9.Name = "homeLbl9";
+            this.homeLbl9.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl9.TabIndex = 21;
+            this.homeLbl9.Text = "Liverpool";
             // 
-            // numericUpDown4
+            // awayLbl8
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(125, 94);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown4.TabIndex = 29;
+            this.awayLbl8.AutoSize = true;
+            this.awayLbl8.Location = new System.Drawing.Point(169, 221);
+            this.awayLbl8.Name = "awayLbl8";
+            this.awayLbl8.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl8.TabIndex = 20;
+            this.awayLbl8.Text = "Liverpool";
             // 
-            // numericUpDown5
+            // homeLbl8
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(84, 119);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown5.TabIndex = 30;
+            this.homeLbl8.AutoSize = true;
+            this.homeLbl8.Location = new System.Drawing.Point(28, 221);
+            this.homeLbl8.Name = "homeLbl8";
+            this.homeLbl8.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl8.TabIndex = 19;
+            this.homeLbl8.Text = "Liverpool";
             // 
-            // numericUpDown6
+            // awayLbl7
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(125, 120);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown6.TabIndex = 31;
+            this.awayLbl7.AutoSize = true;
+            this.awayLbl7.Location = new System.Drawing.Point(169, 195);
+            this.awayLbl7.Name = "awayLbl7";
+            this.awayLbl7.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl7.TabIndex = 18;
+            this.awayLbl7.Text = "Liverpool";
             // 
-            // numericUpDown7
+            // homeLbl7
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(84, 144);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown7.TabIndex = 32;
+            this.homeLbl7.AutoSize = true;
+            this.homeLbl7.Location = new System.Drawing.Point(28, 195);
+            this.homeLbl7.Name = "homeLbl7";
+            this.homeLbl7.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl7.TabIndex = 17;
+            this.homeLbl7.Text = "Liverpool";
             // 
-            // numericUpDown8
+            // awayLbl6
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(125, 146);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown8.TabIndex = 33;
+            this.awayLbl6.AutoSize = true;
+            this.awayLbl6.Location = new System.Drawing.Point(169, 172);
+            this.awayLbl6.Name = "awayLbl6";
+            this.awayLbl6.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl6.TabIndex = 16;
+            this.awayLbl6.Text = "Liverpool";
             // 
-            // numericUpDown9
+            // homeLbl6
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(84, 170);
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown9.TabIndex = 34;
+            this.homeLbl6.AutoSize = true;
+            this.homeLbl6.Location = new System.Drawing.Point(28, 172);
+            this.homeLbl6.Name = "homeLbl6";
+            this.homeLbl6.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl6.TabIndex = 15;
+            this.homeLbl6.Text = "Liverpool";
             // 
-            // numericUpDown10
+            // awayLbl5
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(125, 170);
-            this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown10.TabIndex = 35;
+            this.awayLbl5.AutoSize = true;
+            this.awayLbl5.Location = new System.Drawing.Point(169, 146);
+            this.awayLbl5.Name = "awayLbl5";
+            this.awayLbl5.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl5.TabIndex = 14;
+            this.awayLbl5.Text = "Liverpool";
             // 
-            // numericUpDown11
+            // homeLbl5
             // 
-            this.numericUpDown11.Location = new System.Drawing.Point(84, 193);
-            this.numericUpDown11.Name = "numericUpDown11";
-            this.numericUpDown11.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown11.TabIndex = 36;
+            this.homeLbl5.AutoSize = true;
+            this.homeLbl5.Location = new System.Drawing.Point(28, 146);
+            this.homeLbl5.Name = "homeLbl5";
+            this.homeLbl5.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl5.TabIndex = 13;
+            this.homeLbl5.Text = "Liverpool";
             // 
-            // numericUpDown12
+            // awayLbl4
             // 
-            this.numericUpDown12.Location = new System.Drawing.Point(125, 193);
-            this.numericUpDown12.Name = "numericUpDown12";
-            this.numericUpDown12.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown12.TabIndex = 37;
+            this.awayLbl4.AutoSize = true;
+            this.awayLbl4.Location = new System.Drawing.Point(169, 119);
+            this.awayLbl4.Name = "awayLbl4";
+            this.awayLbl4.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl4.TabIndex = 12;
+            this.awayLbl4.Text = "Liverpool";
             // 
-            // numericUpDown13
+            // homeLbl4
             // 
-            this.numericUpDown13.Location = new System.Drawing.Point(84, 219);
-            this.numericUpDown13.Name = "numericUpDown13";
-            this.numericUpDown13.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown13.TabIndex = 38;
+            this.homeLbl4.AutoSize = true;
+            this.homeLbl4.Location = new System.Drawing.Point(28, 119);
+            this.homeLbl4.Name = "homeLbl4";
+            this.homeLbl4.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl4.TabIndex = 11;
+            this.homeLbl4.Text = "Liverpool";
             // 
-            // numericUpDown14
+            // awayLbl3
             // 
-            this.numericUpDown14.Location = new System.Drawing.Point(125, 221);
-            this.numericUpDown14.Name = "numericUpDown14";
-            this.numericUpDown14.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown14.TabIndex = 39;
+            this.awayLbl3.AutoSize = true;
+            this.awayLbl3.Location = new System.Drawing.Point(169, 93);
+            this.awayLbl3.Name = "awayLbl3";
+            this.awayLbl3.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl3.TabIndex = 10;
+            this.awayLbl3.Text = "Liverpool";
             // 
-            // numericUpDown15
+            // homeLbl3
             // 
-            this.numericUpDown15.Location = new System.Drawing.Point(84, 245);
-            this.numericUpDown15.Name = "numericUpDown15";
-            this.numericUpDown15.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown15.TabIndex = 40;
+            this.homeLbl3.AutoSize = true;
+            this.homeLbl3.Location = new System.Drawing.Point(28, 93);
+            this.homeLbl3.Name = "homeLbl3";
+            this.homeLbl3.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl3.TabIndex = 9;
+            this.homeLbl3.Text = "Liverpool";
             // 
-            // numericUpDown16
+            // awayLbl2
             // 
-            this.numericUpDown16.Location = new System.Drawing.Point(125, 245);
-            this.numericUpDown16.Name = "numericUpDown16";
-            this.numericUpDown16.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown16.TabIndex = 41;
+            this.awayLbl2.AutoSize = true;
+            this.awayLbl2.Location = new System.Drawing.Point(169, 68);
+            this.awayLbl2.Name = "awayLbl2";
+            this.awayLbl2.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl2.TabIndex = 8;
+            this.awayLbl2.Text = "Liverpool";
             // 
-            // numericUpDown17
+            // homeLbl2
             // 
-            this.numericUpDown17.Location = new System.Drawing.Point(84, 271);
-            this.numericUpDown17.Name = "numericUpDown17";
-            this.numericUpDown17.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown17.TabIndex = 42;
+            this.homeLbl2.AutoSize = true;
+            this.homeLbl2.Location = new System.Drawing.Point(28, 68);
+            this.homeLbl2.Name = "homeLbl2";
+            this.homeLbl2.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl2.TabIndex = 7;
+            this.homeLbl2.Text = "Liverpool";
             // 
-            // numericUpDown18
+            // awayLbl1
             // 
-            this.numericUpDown18.Location = new System.Drawing.Point(125, 270);
-            this.numericUpDown18.Name = "numericUpDown18";
-            this.numericUpDown18.Size = new System.Drawing.Size(35, 20);
-            this.numericUpDown18.TabIndex = 43;
+            this.awayLbl1.AutoSize = true;
+            this.awayLbl1.Location = new System.Drawing.Point(169, 42);
+            this.awayLbl1.Name = "awayLbl1";
+            this.awayLbl1.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl1.TabIndex = 6;
+            this.awayLbl1.Text = "Liverpool";
+            // 
+            // homeLbl1
+            // 
+            this.homeLbl1.AutoSize = true;
+            this.homeLbl1.Location = new System.Drawing.Point(28, 40);
+            this.homeLbl1.Name = "homeLbl1";
+            this.homeLbl1.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl1.TabIndex = 5;
+            this.homeLbl1.Text = "Liverpool";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(859, 505);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Attack Summary";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -797,24 +798,24 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
