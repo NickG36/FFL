@@ -62,8 +62,14 @@ public class CommonTypes
 
         public override string ToString()
         {
-            return GenUtils.getInstance().ToStr(home_team) + " " + home_score + "-" + away_score + " " + GenUtils.getInstance().ToStr(away_team);
+            return GenUtils.getInstance().ToLongString(home_team) + " " + home_score + "-" + away_score + " " + GenUtils.getInstance().ToLongString(away_team);
         }
+    }
+
+    public struct Fixture
+    {
+        public TeamName opponent;
+        public bool is_home;
     }
 
     // TO DO: Add ctor and make fields properties. Rm set
