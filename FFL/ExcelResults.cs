@@ -44,12 +44,12 @@ namespace FFL
 
             using (StreamWriter writer = File.AppendText(fileName))
             {
-                writer.WriteLine(home_team);
-                writer.WriteLine(",");
-                writer.WriteLine(home_score);
-                writer.WriteLine(",");
-                writer.WriteLine(away_score);
-                writer.WriteLine(",");
+                writer.Write(home_team);
+                writer.Write(",");
+                writer.Write(home_score);
+                writer.Write(",");
+                writer.Write(away_score);
+                writer.Write(",");
                 writer.WriteLine(away_team);
             }
         }
@@ -58,25 +58,26 @@ namespace FFL
         {
             List<CommonTypes.Result> result = new List<CommonTypes.Result>();
 
-            reader = new StreamReader(fileName);
-            String curr_line = "";
-
-            while((curr_line = reader.ReadLine()) != null)
+            using (reader = new StreamReader(fileName))
             {
-                if(!curr_line.StartsWith(",,"))
+                String curr_line = "";
+
+                while ((curr_line = reader.ReadLine()) != null)
                 {
-                    CommonTypes.Result curr_result;
-                    string[] parts = curr_line.Split(',');
+                    if (!curr_line.StartsWith(",,"))
+                    {
+                        CommonTypes.Result curr_result;
+                        string[] parts = curr_line.Split(',');
 
-                    curr_result.home_team = GenUtils.getInstance().ToTeamName(parts[0]);
-                    curr_result.home_score = ushort.Parse(parts[1]);
-                    curr_result.away_score = ushort.Parse(parts[2]);
-                    curr_result.away_team = GenUtils.getInstance().ToTeamName(parts[3]);
+                        curr_result.home_team = GenUtils.getInstance().ToTeamName(parts[0]);
+                        curr_result.home_score = ushort.Parse(parts[1]);
+                        curr_result.away_score = ushort.Parse(parts[2]);
+                        curr_result.away_team = GenUtils.getInstance().ToTeamName(parts[3]);
 
-                    result.Add(curr_result);
+                        result.Add(curr_result);
+                    }
                 }
             }
-
             return result;
         }
 

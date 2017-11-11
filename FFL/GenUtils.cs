@@ -102,9 +102,9 @@ public class GenUtils
         return result;
     }
 
-//    const ushort NUM_TEAMS = 20; // Needed?
-
+    public static ushort NUM_TEAMS = 20;
     // Long team names:
+    #region
     private const string ARSENAL_STR = "Arsenal";
     private const string BOURNEMOUTH_STR = "Bournemouth";
     private const string BRIGHTON_STR = "Brighton";
@@ -125,8 +125,10 @@ public class GenUtils
     private const string WATFORD_STR = "Watford";
     private const string WEST_BROM_STR = "WBA";
     private const string WEST_HAM_STR = "West Ham";
+    #endregion
 
     // Short team names:
+    #region
     private const string ARS_STR = "Ars";
     private const string BOU_STR = "Bou";
     private const string BRI_STR = "Bri";
@@ -147,5 +149,5 @@ public class GenUtils
     private const string WAT_STR = "Wat";
     private const string WBA_STR = "WBA";
     private const string WHA_STR = "WHa";
-
+    #endregion
 }

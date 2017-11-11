@@ -20,11 +20,10 @@ public class CommonTypes
             this.at_home = at_home;
         }
 
-        // TO DO: make properties with only a get:
-        public Boolean at_home;
-        public ushort goals_for;
-        public ushort goals_against;
-        public TeamName opponent;
+        public readonly ushort goals_for;
+        public readonly ushort goals_against;
+        public readonly TeamName opponent;
+        public readonly Boolean at_home;
 
         public override string ToString()
         {
@@ -34,21 +33,26 @@ public class CommonTypes
             else
                 result = "A";
 
-            result += goals_for + "-" + goals_against + " v " + opponent;
+            result += $"{goals_for} - {goals_against} v {opponent}";
             return result;
         }
     }
 
     public struct TwoTeams
     {
-        public string home;
-        public string away;
+        public string home { get; }
+        public string away { get; }
 
-        public override string ToString() => home + " v " + away;
+        public TwoTeams(string home, string away)
+        {
+            this.home = home;
+            this.away = away;
+        }
+        public override string ToString() => $"{home} v {away}";
     }
 
     public enum TeamName { ARS, BOU, BRI, BUR, CHE,
-                           EVE, HUD, LEI, LIV, PAL,
+                           PAL, EVE, HUD, LEI, LIV, 
                            SOT, STO, SWA, TOT, MANC,
                            MANU, NEW, WAT, WBA, WHA};
 
@@ -68,8 +72,14 @@ public class CommonTypes
 
     public struct Fixture
     {
-        public TeamName opponent;
-        public bool is_home;
+        public readonly TeamName opponent;
+        public readonly bool is_home;
+
+        public Fixture(TeamName opponent, bool is_home)
+        {
+            this.opponent = opponent;
+            this.is_home = is_home;
+        }
     }
 
     // TO DO: Add ctor and make fields properties. Rm set
@@ -79,7 +89,7 @@ public class CommonTypes
         public ushort last10;
         public ushort total;
 
-        public override string ToString() => "All: " + total + ", last 10: " + last10 + ", last 6:" + last6;
+        public override string ToString() => $"All: {total}, last 10: {last10}, last 6: {last6}";
     }
     public struct GoalsCountWithTeam
     {
