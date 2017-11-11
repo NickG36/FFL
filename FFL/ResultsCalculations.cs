@@ -103,10 +103,12 @@ namespace FFL
             const ushort SIX_WEEKS = 6;
             const ushort TEN_WEEKS = 10;
 
-            var result = new CommonTypes.GoalsCount();
-
             // Loop through last 6 matches, last 10 and all season
             int num_results = team_results.Count;
+
+            ushort total = 0;
+            ushort last6 = 0;
+            ushort last10 = 0;
 
             for (int week = num_results - 1; week >= 0; week--)
             {
@@ -114,15 +116,17 @@ namespace FFL
                 // Use delegate to calculate either goals scored/conceded or clean sheets as appropriate
                 //
                 ushort goals_value = goals_method(team_results[week]);
-                result.total += goals_value;
+                total += goals_value;
 
                 if ((num_results - week) < SIX_WEEKS)
-                    result.last6 += goals_value;
+                    last6 += goals_value;
 
                 if ((num_results - week) < TEN_WEEKS)
-                    result.last10 += goals_value;
+                    last10 += goals_value;
             }
-            return result;
+            return new CommonTypes.GoalsCount(last6 : last6,
+                                              last10: last10,
+                                              total : total);
         }
 
         public static Dictionary<CommonTypes.TeamName, ushort> calcAttackingDefRanking(GoalsByTeam goals_scored_conceded)

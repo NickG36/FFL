@@ -58,9 +58,12 @@ namespace FFL
             res_summary = new ResultsSummary(att_grid: attDataGridView,
                                              def_grid: defDataGrid);
 
-            if(results.doesFileExist() )
+            if (results.doesFileExist())
+            {
                 res_summary.reCalculate(results.getAllResults(),
                                         fixtures.readAllFixtures());
+                updateExistingResults(false);
+            }
         }
 
 
@@ -82,7 +85,7 @@ namespace FFL
             enableCB(0);
         }
 
-       private void onLoad(object sender, EventArgs e)
+        private void onLoad(object sender, EventArgs e)
         {
             enableCB(0);
         }
@@ -235,9 +238,7 @@ namespace FFL
         {
             var week_name = weekTB.Text;
 
-            var result = fixtures.fileExistsCanCreate();
-
-            if (result)
+            if (fixtures.fileExistsCanCreate())
             {
                 fixtures.addText(week_name);
 
@@ -254,6 +255,9 @@ namespace FFL
             weekTB.Text = "";
             // Update the pane showing fixtures
             updateFixturesPane(false);
+            updateExistingResults(false);
+            res_summary.reCalculate(results.getAllResults(),
+                                    fixtures.readAllFixtures());
         }
 
         /// <summary>
@@ -277,7 +281,7 @@ namespace FFL
         /// <param name="inform">in</param>
         private void updateFixturesPane(bool inform)
         {
-            if (!fixtures.fileExists())
+            if (!fixtures.doesFileExist())
             {
                 if (inform)
                 {
@@ -304,9 +308,50 @@ namespace FFL
                 }
 
                 existingFixTB.Text = existing_fix_str;
+            }
+        }
+
+        /// <summary>
+        /// Updates the existing results in the results pane.
+        /// If no results file is found, user will be informed if parameter is true
+        /// </summary>
+        /// <param name="inform">in</param>
+        private void updateExistingResults(bool inform)
+        {
+            if (!results.doesFileExist())
+            {
+                if (inform)
+                {
+                    MessageBox.Show($"Can't find results file. No results found",
+                                    "Results file not found",
+                                    MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                existResTB.Text = "";
+
+                var all_results_blocks = results.getAllResultsBlocks();
+
+                string existing_res_str = "";
+
+                foreach (var curr_block in all_results_blocks)
+                {
+                    existing_res_str += curr_block.week_description + "\n";
+
+                    foreach (var curr_res in curr_block.results)
+                    {
+                        existing_res_str += curr_res + "\n";
+                    }
+                    existing_res_str += "___________________________\n";
+                }
+
+                existResTB.Text = existing_res_str;
 
             }
         }
+
+
         private void updatePressed(object sender, EventArgs e)
         {
             updateFixturesPane(true);
@@ -351,10 +396,35 @@ namespace FFL
             results.addResult(homeLbl10.Text, awayLbl10.Text,
                               (ushort)homeScore10.Value, (ushort)awayScore10.Value);
 
+            updateExistingResults(false);
+
             res_summary.reCalculate(results.getAllResults(),
                                     fixtures.readAllFixtures());
 
             commitResBtn.Enabled = false;
+
+            homeScore1.Value = 0; awayScore1.Value = 0;
+            homeScore2.Value = 0; awayScore2.Value = 0;
+            homeScore3.Value = 0; awayScore3.Value = 0;
+            homeScore4.Value = 0; awayScore4.Value = 0;
+            homeScore5.Value = 0; awayScore5.Value = 0;
+            homeScore6.Value = 0; awayScore6.Value = 0;
+            homeScore7.Value = 0; awayScore7.Value = 0;
+            homeScore8.Value = 0; awayScore8.Value = 0;
+            homeScore9.Value = 0; awayScore9.Value = 0;
+            homeScore10.Value = 0; awayScore10.Value = 0;
+
+            ResultsWkLbl.Text = "";
+            homeLbl1.Text = ""; awayLbl1.Text = "";
+            homeLbl2.Text = ""; awayLbl2.Text = "";
+            homeLbl3.Text = ""; awayLbl3.Text = "";
+            homeLbl4.Text = ""; awayLbl4.Text = "";
+            homeLbl5.Text = ""; awayLbl5.Text = "";
+            homeLbl6.Text = ""; awayLbl6.Text = "";
+            homeLbl7.Text = ""; awayLbl7.Text = "";
+            homeLbl8.Text = ""; awayLbl8.Text = "";
+            homeLbl9.Text = ""; awayLbl9.Text = "";
+            homeLbl10.Text = ""; awayLbl10.Text = "";
         }
 
         private void populateResultsClick(object sender, EventArgs e)

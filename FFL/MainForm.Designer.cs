@@ -71,6 +71,8 @@
             this.awayCB4 = new System.Windows.Forms.ComboBox();
             this.homeCB4 = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.existResTB = new System.Windows.Forms.RichTextBox();
             this.ResultsWkLbl = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.commitResBtn = new System.Windows.Forms.Button();
@@ -593,6 +595,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.existResTB);
             this.tabPage2.Controls.Add(this.ResultsWkLbl);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.commitResBtn);
@@ -644,6 +648,24 @@
             this.tabPage2.Text = "Results";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(334, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 13);
+            this.label14.TabIndex = 48;
+            this.label14.Text = "Existing Results:";
+            // 
+            // existResTB
+            // 
+            this.existResTB.Location = new System.Drawing.Point(337, 42);
+            this.existResTB.Name = "existResTB";
+            this.existResTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.existResTB.Size = new System.Drawing.Size(280, 426);
+            this.existResTB.TabIndex = 47;
+            this.existResTB.Text = "";
+            // 
             // ResultsWkLbl
             // 
             this.ResultsWkLbl.AutoSize = true;
@@ -676,7 +698,7 @@
             // 
             // awayScore10
             // 
-            this.awayScore10.Location = new System.Drawing.Point(135, 270);
+            this.awayScore10.Location = new System.Drawing.Point(135, 271);
             this.awayScore10.Name = "awayScore10";
             this.awayScore10.Size = new System.Drawing.Size(35, 20);
             this.awayScore10.TabIndex = 43;
@@ -690,7 +712,7 @@
             // 
             // awayScore9
             // 
-            this.awayScore9.Location = new System.Drawing.Point(135, 245);
+            this.awayScore9.Location = new System.Drawing.Point(135, 244);
             this.awayScore9.Name = "awayScore9";
             this.awayScore9.Size = new System.Drawing.Size(35, 20);
             this.awayScore9.TabIndex = 41;
@@ -704,7 +726,7 @@
             // 
             // awayScore8
             // 
-            this.awayScore8.Location = new System.Drawing.Point(135, 221);
+            this.awayScore8.Location = new System.Drawing.Point(135, 218);
             this.awayScore8.Name = "awayScore8";
             this.awayScore8.Size = new System.Drawing.Size(35, 20);
             this.awayScore8.TabIndex = 39;
@@ -746,7 +768,7 @@
             // 
             // awayScore5
             // 
-            this.awayScore5.Location = new System.Drawing.Point(135, 146);
+            this.awayScore5.Location = new System.Drawing.Point(135, 144);
             this.awayScore5.Name = "awayScore5";
             this.awayScore5.Size = new System.Drawing.Size(35, 20);
             this.awayScore5.TabIndex = 33;
@@ -760,7 +782,7 @@
             // 
             // awayScore4
             // 
-            this.awayScore4.Location = new System.Drawing.Point(135, 120);
+            this.awayScore4.Location = new System.Drawing.Point(135, 118);
             this.awayScore4.Name = "awayScore4";
             this.awayScore4.Size = new System.Drawing.Size(35, 20);
             this.awayScore4.TabIndex = 31;
@@ -788,7 +810,7 @@
             // 
             // awayScore2
             // 
-            this.awayScore2.Location = new System.Drawing.Point(135, 68);
+            this.awayScore2.Location = new System.Drawing.Point(135, 66);
             this.awayScore2.Name = "awayScore2";
             this.awayScore2.Size = new System.Drawing.Size(35, 20);
             this.awayScore2.TabIndex = 27;
@@ -1124,7 +1146,7 @@
             this.Column29});
             this.defDataGrid.Location = new System.Drawing.Point(8, 12);
             this.defDataGrid.Name = "defDataGrid";
-            this.defDataGrid.Size = new System.Drawing.Size(897, 535);
+            this.defDataGrid.Size = new System.Drawing.Size(940, 535);
             this.defDataGrid.TabIndex = 0;
             // 
             // Column14
@@ -1139,28 +1161,28 @@
             this.Column15.HeaderText = "Team Name";
             this.Column15.Name = "Column15";
             this.Column15.ReadOnly = true;
-            this.Column15.Width = 80;
+            this.Column15.Width = 60;
             // 
             // Column16
             // 
             this.Column16.HeaderText = "Goals Against (last 10 matches)";
             this.Column16.Name = "Column16";
             this.Column16.ReadOnly = true;
-            this.Column16.Width = 60;
+            this.Column16.Width = 55;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "Goals Against (last 6 matches)";
             this.Column17.Name = "Column17";
             this.Column17.ReadOnly = true;
-            this.Column17.Width = 60;
+            this.Column17.Width = 55;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "Goals Against (all matches)";
             this.Column18.Name = "Column18";
             this.Column18.ReadOnly = true;
-            this.Column18.Width = 60;
+            this.Column18.Width = 55;
             // 
             // Column19
             // 
@@ -1188,42 +1210,42 @@
             this.Column22.HeaderText = "Next match (1), with opponent\'s attacking rank";
             this.Column22.Name = "Column22";
             this.Column22.ReadOnly = true;
-            this.Column22.Width = 80;
+            this.Column22.Width = 65;
             // 
             // Column23
             // 
             this.Column23.HeaderText = "Next match (2)";
             this.Column23.Name = "Column23";
             this.Column23.ReadOnly = true;
-            this.Column23.Width = 80;
+            this.Column23.Width = 55;
             // 
             // Column24
             // 
             this.Column24.HeaderText = "Next match (3)";
             this.Column24.Name = "Column24";
             this.Column24.ReadOnly = true;
-            this.Column24.Width = 80;
+            this.Column24.Width = 55;
             // 
             // Column25
             // 
             this.Column25.HeaderText = "Next match (4)";
             this.Column25.Name = "Column25";
             this.Column25.ReadOnly = true;
-            this.Column25.Width = 80;
+            this.Column25.Width = 55;
             // 
             // Column26
             // 
             this.Column26.HeaderText = "Next match (5)";
             this.Column26.Name = "Column26";
             this.Column26.ReadOnly = true;
-            this.Column26.Width = 80;
+            this.Column26.Width = 55;
             // 
             // Column27
             // 
             this.Column27.HeaderText = "Next match (6)";
             this.Column27.Name = "Column27";
             this.Column27.ReadOnly = true;
-            this.Column27.Width = 80;
+            this.Column27.Width = 55;
             // 
             // Column28
             // 
@@ -1237,7 +1259,7 @@
             this.Column29.HeaderText = "Ave opponent att rank (next 3 matches)";
             this.Column29.Name = "Column29";
             this.Column29.ReadOnly = true;
-            this.Column29.Width = 50;
+            this.Column29.Width = 55;
             // 
             // MainForm
             // 
@@ -1384,6 +1406,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RichTextBox existResTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;

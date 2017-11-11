@@ -15,7 +15,7 @@ namespace FFL
 
         StreamReader reader;
 
-        public override bool fileExists()
+        public override bool doesFileExist()
         {
             bool does_exist = true;
 
@@ -65,13 +65,10 @@ namespace FFL
         /// <param name="newText"></param>
         public override void addText(string newText)
         {
-            //if (fileExists() )
-            //{
-                using (StreamWriter w = File.AppendText(fileName))
-                {
-                    w.WriteLine(",," + newText);
-                }
-            //}
+            using (StreamWriter w = File.AppendText(fileName))
+            {
+                w.WriteLine(",," + newText);
+            }
         }
 
         /// <summary>
@@ -81,22 +78,17 @@ namespace FFL
         /// <param name="away"></param>
         public override void addTeams(string home, string away)
         {
-//            if (fileExists())
-//            {
-                using (StreamWriter w = File.AppendText(fileName))
-                {
-                    w.Write(home);
-                    w.Write(",");
-                    w.WriteLine(away);
-                }
-//            }
+            using (StreamWriter w = File.AppendText(fileName))
+            {
+                w.Write(home);
+                w.Write(",");
+                w.WriteLine(away);
+            }
         }
 
-        public override void setupReader()
-        {
-            reader = new StreamReader(fileName);
-        }
-
+        /// <summary>
+        /// Will delete the first block of fixtures from the file
+        /// </summary>
         public override void deleteFirstBlock()
         {
             bool startFound = false;
@@ -106,22 +98,12 @@ namespace FFL
             {
                 while ((currLine = reader.ReadLine()) != null)
                 {
-                    Console.WriteLine("Read:'" + currLine + "'");
                     if (currLine.StartsWith(",,"))
                     {
-                        Console.WriteLine("START BLOCK FOUND");
                         if (startFound)
-                        {
                             break;
-                        }
                         else
-                        {
                             startFound = true;
-                        }
-                    }
-                    else if (startFound)
-                    {
-                        Console.WriteLine("Data:'" + currLine + "'");
                     }
                 }
 
@@ -142,24 +124,37 @@ namespace FFL
                 }
             } // end using reader
 
-            // Move temp file to orig file
+            // Delete orig file, then move temp file to orig file
+            try
+            {
+                File.Delete(fileName);
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Error: I can't remove Fixtures.csv",
+                                "Can't remove Fixtures.csv",
+                                MessageBoxButtons.OK);
+            }
             File.Move(tempFileName, fileName);
         }
 
+        /// <summary>
+        /// Reads and returns first block of fixtures from file
+        /// </summary>
+        /// <returns></returns>
         public override FixturesBlock readFirstBlock()
         {
             FixturesBlock result = new FixturesBlock();
-            result.fixtures = new List<CommonTypes.TwoTeams>();
+//            result.fixtures = new List<CommonTypes.TwoTeams>();
 
             bool startFound = false;
-            //bool endFound = false;
 
             string curr_line = "";
             using (reader = new StreamReader(fileName))
             {
                 while ((curr_line = reader.ReadLine()) != null)
                 {
-                    Console.WriteLine("Read:'" + curr_line + "'");
+                    // A 'week' row in the Excel file starts with two empty cells
                     if (curr_line.StartsWith(",,"))
                     {
                         if (startFound)
@@ -189,6 +184,10 @@ namespace FFL
             return result;
         }
 
+        /// <summary>
+        /// Will read and return all the fixture blocks
+        /// </summary>
+        /// <returns></returns>
         public override List<FixturesBlock> readAllFixtureBlocks()
         {
             var result = new List<FixturesBlock>();
@@ -204,7 +203,7 @@ namespace FFL
             {
                 while ((curr_line = reader.ReadLine()) != null)
                 {
-                    Console.WriteLine("Read:'" + curr_line + "'");
+                    // A 'week' row in the Excel file starts with two empty cells
                     if (curr_line.StartsWith(",,"))
                     {
                         if (pending_fixtures)
@@ -222,7 +221,6 @@ namespace FFL
                     }
                     else
                     {
-                        Console.WriteLine("Data:'" + curr_line + "'");
                         string[] parts = curr_line.Split(',');
 
                         CommonTypes.TwoTeams teams = new CommonTypes.TwoTeams(home: parts[0],
@@ -248,10 +246,8 @@ namespace FFL
             {
                 while ((curr_line = reader.ReadLine()) != null)
                 {
-                    Console.WriteLine("Read:'" + curr_line + "'");
                     if (!curr_line.StartsWith(",,"))
                     {
-                        Console.WriteLine("Data:'" + curr_line + "'");
                         string[] parts = curr_line.Split(',');
 
                         CommonTypes.TwoTeams teams = new CommonTypes.TwoTeams(home: parts[0],

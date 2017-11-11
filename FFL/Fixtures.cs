@@ -8,13 +8,11 @@ namespace FFL
 { 
     public abstract class Fixtures
     {
-        abstract public void setupReader();
-
         /// <summary>
         /// Does the Fixtures file exist?
         /// </summary>
         /// <returns></returns>
-        abstract public bool fileExists();
+        abstract public bool doesFileExist();
 
         /// <summary>
         /// Does the Fixtures file exist? Gives user the option to
@@ -26,8 +24,15 @@ namespace FFL
         abstract public void addText(String str);
         abstract public void addTeams(String home, String away);
 
-        public struct FixturesBlock
+        /// <summary>
+        /// A FixturesBlock represents one week's set of fixtures
+        /// </summary>
+        public class FixturesBlock
         {
+            public FixturesBlock()
+            {
+                fixtures = new List<CommonTypes.TwoTeams>();
+            }
             public string week_description;
             public List<CommonTypes.TwoTeams> fixtures;
         }

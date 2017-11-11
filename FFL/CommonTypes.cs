@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 /// <summary>
 /// Summary description for Class1
@@ -9,8 +8,8 @@ public class CommonTypes
 {
     public struct TeamResult
     {
-        public TeamResult(ushort goals_for,
-                          ushort goals_against,
+        public TeamResult(ushort   goals_for,
+                          ushort   goals_against,
                           TeamName opponent,
                           Boolean  at_home)
         {
@@ -40,14 +39,14 @@ public class CommonTypes
 
     public struct TwoTeams
     {
-        public string home { get; }
-        public string away { get; }
-
         public TwoTeams(string home, string away)
         {
             this.home = home;
             this.away = away;
         }
+        public string home { get; }
+        public string away { get; }
+
         public override string ToString() => $"{home} v {away}";
     }
 
@@ -59,15 +58,24 @@ public class CommonTypes
 
     public struct Result
     {
-        public TeamName home_team;
-        public TeamName away_team;
-        public ushort home_score;
-        public ushort away_score;
+        readonly public TeamName home_team;
+        readonly public TeamName away_team;
+        readonly public ushort home_score;
+        readonly public ushort away_score;
 
-        public override string ToString()
+        public Result(TeamName home_team,
+                      TeamName away_team, 
+                      ushort   home_score,
+                      ushort   away_score)
         {
-            return GenUtils.getInstance().ToLongString(home_team) + " " + home_score + "-" + away_score + " " + GenUtils.getInstance().ToLongString(away_team);
+            this.home_team = home_team;
+            this.away_team = away_team;
+            this.home_score = home_score;
+            this.away_score = away_score;
         }
+        public override string ToString() =>
+            GenUtils.getInstance().ToLongString(home_team) + " " + home_score + "-" + away_score + " " + GenUtils.getInstance().ToLongString(away_team);
+
     }
 
     public struct Fixture
@@ -85,12 +93,25 @@ public class CommonTypes
     // TO DO: Add ctor and make fields properties. Rm set
     public struct GoalsCount
     {
-        public ushort last6;
-        public ushort last10;
-        public ushort total;
+        public GoalsCount(ushort last6,
+                          ushort last10,
+                          ushort total)
+        {
+            this.last6 = last6;
+            this.last10 = last10;
+            this.total = total;
+        }
+        readonly public ushort last6;
+        readonly public ushort last10;
+        readonly public ushort total;
 
         public override string ToString() => $"All: {total}, last 10: {last10}, last 6: {last6}";
     }
+
+    /// <summary>
+    /// GoalsCountWithTeam is useful for storing in a SortedDictionary, so that teams
+    /// with identical records (but different team names) can be differentiated
+    /// </summary>
     public struct GoalsCountWithTeam
     {
         public GoalsCountWithTeam(GoalsCount goals_count, TeamName name)
@@ -99,8 +120,8 @@ public class CommonTypes
             this.name = name;
         }
 
-        public GoalsCount goals;
-        public TeamName name;
+        public GoalsCount goals { get; }
+        public TeamName name { get; }
 
         public override string ToString() => base.ToString() + ", team:" + name;
     }

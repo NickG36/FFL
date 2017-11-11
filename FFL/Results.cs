@@ -18,5 +18,20 @@ namespace FFL
                                        ushort away_score);
 
         abstract public List<CommonTypes.Result> getAllResults();
+
+        /// <summary>
+        /// A ResultsBlock represents one week's worth of results
+        /// </summary>
+        public class ResultsBlock
+        {
+            public ResultsBlock()
+            {
+                results = new List<CommonTypes.Result>();
+            }
+            public string week_description;
+            public List<CommonTypes.Result> results;
+        }
+        abstract public List<ResultsBlock> getAllResultsBlocks();
+
     }
 }

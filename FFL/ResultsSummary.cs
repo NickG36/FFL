@@ -62,7 +62,7 @@ namespace FFL
                     break;
                 }
 
-                CommonTypes.Fixture curr_fixture = next_fixtures[next_fixtures.Count - idx - 1];
+                CommonTypes.Fixture curr_fixture = next_fixtures[idx];
                 CommonTypes.TeamName opponent = curr_fixture.opponent;
 
                 tot_opp_goals_conceded += goals_conceded_by_team[opponent].last6;
@@ -108,7 +108,11 @@ namespace FFL
             attacking_grid = att_grid;
             defending_grid = def_grid;
 
- //           reCalculate(results, fixtures);
+        }
+
+        private void resetGrid(DataGridView dataGridView)
+        {
+            dataGridView.Rows.Clear();
         }
 
         private void populateAttackingTab(
@@ -130,9 +134,12 @@ namespace FFL
             const int FIXTURE_3_IDX = 7;
             const int FIXTURE_4_IDX = 8;
             const int FIXTURE_5_IDX = 9;
-            const int NUM_GOALS_IDX = 10;
+            const int FIXTURE_6_IDX = 10;
+  //          const int NUM_GOALS_IDX = 11;
             const int NUM_HOME_MATCHES_IDX = 11;
             const int AVE_OPP_RANK_IDX = 12;
+
+            resetGrid(dataGridView);
 
             foreach (CommonTypes.TeamName team_nm in Enum.GetValues(typeof(CommonTypes.TeamName)))
             {
@@ -142,7 +149,11 @@ namespace FFL
                 string[] curr_row_str = new string[15];
 
                 ushort att_rank = attacking_ranking[team_nm];
-                curr_row_str[RANK_IDX] = att_rank.ToString();
+
+                if(att_rank < 10)
+                  curr_row_str[RANK_IDX] = "0" + att_rank.ToString();
+                else
+                  curr_row_str[RANK_IDX] = att_rank.ToString();
 
                 curr_row_str[TEAM_NAME_IDX] = GenUtils.getInstance().ToShortString(team_nm);
                 curr_row_str[GOALS_SCORED_10_IDX] = goals_scored_by_team[team_nm].last10.ToString();
@@ -158,8 +169,8 @@ namespace FFL
                 curr_row_str[FIXTURE_3_IDX] = fixture_dets.next_fixtures[2];
                 curr_row_str[FIXTURE_4_IDX] = fixture_dets.next_fixtures[3];
                 curr_row_str[FIXTURE_5_IDX] = fixture_dets.next_fixtures[4];
+                curr_row_str[FIXTURE_6_IDX] = fixture_dets.next_fixtures[5];
 
-                curr_row_str[NUM_GOALS_IDX] = fixture_dets.num_goals.ToString();
                 curr_row_str[NUM_HOME_MATCHES_IDX] = fixture_dets.num_home_matches.ToString();
                 curr_row_str[AVE_OPP_RANK_IDX] = fixture_dets.ave_opp_ranking.ToString();
 
@@ -197,9 +208,11 @@ namespace FFL
             const int FIXTURE_3_IDX = 10;
             const int FIXTURE_4_IDX = 11;
             const int FIXTURE_5_IDX = 12;
-            const int NUM_GOALS_IDX = 13;
+            const int FIXTURE_6_IDX = 13;
             const int NUM_HOME_MATCHES_IDX = 14;
             const int AVE_OPP_RANK_IDX = 15;
+
+            resetGrid(dataGridView);
 
             foreach (CommonTypes.TeamName team_nm in Enum.GetValues(typeof(CommonTypes.TeamName)))
             {
@@ -208,7 +221,11 @@ namespace FFL
                 string[] curr_row_str = new string[16];
 
                 ushort att_rank = attacking_ranking[team_nm];
-                curr_row_str[RANK_IDX] = att_rank.ToString();
+
+                if(att_rank < 10)
+                    curr_row_str[RANK_IDX] = "0" + att_rank.ToString();
+                else
+                    curr_row_str[RANK_IDX] = att_rank.ToString();
 
                 curr_row_str[TEAM_NAME_IDX] = GenUtils.getInstance().ToShortString(team_nm);
                 curr_row_str[GOALS_CONCEDED_10_IDX] = goals_conceded_by_team[team_nm].last10.ToString();
@@ -228,8 +245,8 @@ namespace FFL
                 curr_row_str[FIXTURE_3_IDX] = fixture_dets.next_fixtures[2];
                 curr_row_str[FIXTURE_4_IDX] = fixture_dets.next_fixtures[3];
                 curr_row_str[FIXTURE_5_IDX] = fixture_dets.next_fixtures[4];
+                curr_row_str[FIXTURE_6_IDX] = fixture_dets.next_fixtures[5];
 
-                curr_row_str[NUM_GOALS_IDX] = fixture_dets.num_goals.ToString();
                 curr_row_str[NUM_HOME_MATCHES_IDX] = fixture_dets.num_home_matches.ToString();
                 curr_row_str[AVE_OPP_RANK_IDX] = fixture_dets.ave_opp_ranking.ToString();
 
@@ -245,8 +262,6 @@ namespace FFL
 
         public void reCalculate(List<CommonTypes.Result> results,
                                  List<CommonTypes.TwoTeams> fixtures)
-                                 //DataGridView att_grid,
-                                 //DataGridView def_grid)
         {
             // Calculate all results team by team
             ResultsByTeam results_by_team = ResultsCalculations.calcResultsByTeam(results);
