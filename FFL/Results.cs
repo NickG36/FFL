@@ -9,6 +9,8 @@ namespace FFL
 {
     public abstract class Results
     {
+        abstract public bool doesFileExist();
+
         abstract public void addText(String str);
         abstract public void addResult(String home_team, 
                                        String away_team,

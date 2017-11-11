@@ -71,6 +71,7 @@
             this.awayCB4 = new System.Windows.Forms.ComboBox();
             this.homeCB4 = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ResultsWkLbl = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.commitResBtn = new System.Windows.Forms.Button();
             this.awayScore10 = new System.Windows.Forms.NumericUpDown();
@@ -113,9 +114,6 @@
             this.homeLbl1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.attDataGridView = new System.Windows.Forms.DataGridView();
-            this.DefSummaryTab = new System.Windows.Forms.TabPage();
-            this.defDataGrid = new System.Windows.Forms.DataGridView();
-            this.ResultsWkLbl = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,6 +127,8 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DefSummaryTab = new System.Windows.Forms.TabPage();
+            this.defDataGrid = new System.Windows.Forms.DataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -644,18 +644,28 @@
             this.tabPage2.Text = "Results";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // ResultsWkLbl
+            // 
+            this.ResultsWkLbl.AutoSize = true;
+            this.ResultsWkLbl.Location = new System.Drawing.Point(29, 12);
+            this.ResultsWkLbl.Name = "ResultsWkLbl";
+            this.ResultsWkLbl.Size = new System.Drawing.Size(36, 13);
+            this.ResultsWkLbl.TabIndex = 46;
+            this.ResultsWkLbl.Text = "Week";
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(44, 322);
+            this.button3.Location = new System.Drawing.Point(6, 322);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(61, 21);
+            this.button3.Size = new System.Drawing.Size(99, 21);
             this.button3.TabIndex = 45;
-            this.button3.Text = "Populate";
+            this.button3.Text = "Read In Fixtures";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.populateResultsClick);
             // 
             // commitResBtn
             // 
+            this.commitResBtn.Enabled = false;
             this.commitResBtn.Location = new System.Drawing.Point(120, 321);
             this.commitResBtn.Name = "commitResBtn";
             this.commitResBtn.Size = new System.Drawing.Size(75, 23);
@@ -795,180 +805,180 @@
             this.awayLbl10.AutoSize = true;
             this.awayLbl10.Location = new System.Drawing.Point(179, 272);
             this.awayLbl10.Name = "awayLbl10";
-            this.awayLbl10.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl10.Size = new System.Drawing.Size(10, 13);
             this.awayLbl10.TabIndex = 24;
-            this.awayLbl10.Text = "Liverpool";
+            this.awayLbl10.Text = " ";
             // 
             // homeLbl10
             // 
             this.homeLbl10.AutoSize = true;
             this.homeLbl10.Location = new System.Drawing.Point(23, 272);
             this.homeLbl10.Name = "homeLbl10";
-            this.homeLbl10.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl10.Size = new System.Drawing.Size(10, 13);
             this.homeLbl10.TabIndex = 23;
-            this.homeLbl10.Text = "Liverpool";
+            this.homeLbl10.Text = " ";
             // 
             // awayLbl9
             // 
             this.awayLbl9.AutoSize = true;
             this.awayLbl9.Location = new System.Drawing.Point(179, 246);
             this.awayLbl9.Name = "awayLbl9";
-            this.awayLbl9.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl9.Size = new System.Drawing.Size(10, 13);
             this.awayLbl9.TabIndex = 22;
-            this.awayLbl9.Text = "Liverpool";
+            this.awayLbl9.Text = " ";
             // 
             // homeLbl9
             // 
             this.homeLbl9.AutoSize = true;
             this.homeLbl9.Location = new System.Drawing.Point(23, 246);
             this.homeLbl9.Name = "homeLbl9";
-            this.homeLbl9.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl9.Size = new System.Drawing.Size(10, 13);
             this.homeLbl9.TabIndex = 21;
-            this.homeLbl9.Text = "Liverpool";
+            this.homeLbl9.Text = " ";
             // 
             // awayLbl8
             // 
             this.awayLbl8.AutoSize = true;
             this.awayLbl8.Location = new System.Drawing.Point(179, 221);
             this.awayLbl8.Name = "awayLbl8";
-            this.awayLbl8.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl8.Size = new System.Drawing.Size(10, 13);
             this.awayLbl8.TabIndex = 20;
-            this.awayLbl8.Text = "Liverpool";
+            this.awayLbl8.Text = " ";
             // 
             // homeLbl8
             // 
             this.homeLbl8.AutoSize = true;
             this.homeLbl8.Location = new System.Drawing.Point(23, 221);
             this.homeLbl8.Name = "homeLbl8";
-            this.homeLbl8.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl8.Size = new System.Drawing.Size(10, 13);
             this.homeLbl8.TabIndex = 19;
-            this.homeLbl8.Text = "Liverpool";
+            this.homeLbl8.Text = " ";
             // 
             // awayLbl7
             // 
             this.awayLbl7.AutoSize = true;
             this.awayLbl7.Location = new System.Drawing.Point(179, 195);
             this.awayLbl7.Name = "awayLbl7";
-            this.awayLbl7.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl7.Size = new System.Drawing.Size(10, 13);
             this.awayLbl7.TabIndex = 18;
-            this.awayLbl7.Text = "Liverpool";
+            this.awayLbl7.Text = " ";
             // 
             // homeLbl7
             // 
             this.homeLbl7.AutoSize = true;
             this.homeLbl7.Location = new System.Drawing.Point(23, 195);
             this.homeLbl7.Name = "homeLbl7";
-            this.homeLbl7.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl7.Size = new System.Drawing.Size(10, 13);
             this.homeLbl7.TabIndex = 17;
-            this.homeLbl7.Text = "Liverpool";
+            this.homeLbl7.Text = " ";
             // 
             // awayLbl6
             // 
             this.awayLbl6.AutoSize = true;
             this.awayLbl6.Location = new System.Drawing.Point(179, 172);
             this.awayLbl6.Name = "awayLbl6";
-            this.awayLbl6.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl6.Size = new System.Drawing.Size(10, 13);
             this.awayLbl6.TabIndex = 16;
-            this.awayLbl6.Text = "Liverpool";
+            this.awayLbl6.Text = " ";
             // 
             // homeLbl6
             // 
             this.homeLbl6.AutoSize = true;
             this.homeLbl6.Location = new System.Drawing.Point(23, 172);
             this.homeLbl6.Name = "homeLbl6";
-            this.homeLbl6.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl6.Size = new System.Drawing.Size(10, 13);
             this.homeLbl6.TabIndex = 15;
-            this.homeLbl6.Text = "Liverpool";
+            this.homeLbl6.Text = " ";
             // 
             // awayLbl5
             // 
             this.awayLbl5.AutoSize = true;
             this.awayLbl5.Location = new System.Drawing.Point(179, 146);
             this.awayLbl5.Name = "awayLbl5";
-            this.awayLbl5.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl5.Size = new System.Drawing.Size(10, 13);
             this.awayLbl5.TabIndex = 14;
-            this.awayLbl5.Text = "Liverpool";
+            this.awayLbl5.Text = " ";
             // 
             // homeLbl5
             // 
             this.homeLbl5.AutoSize = true;
             this.homeLbl5.Location = new System.Drawing.Point(23, 146);
             this.homeLbl5.Name = "homeLbl5";
-            this.homeLbl5.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl5.Size = new System.Drawing.Size(10, 13);
             this.homeLbl5.TabIndex = 13;
-            this.homeLbl5.Text = "Liverpool";
+            this.homeLbl5.Text = " ";
             // 
             // awayLbl4
             // 
             this.awayLbl4.AutoSize = true;
             this.awayLbl4.Location = new System.Drawing.Point(179, 119);
             this.awayLbl4.Name = "awayLbl4";
-            this.awayLbl4.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl4.Size = new System.Drawing.Size(10, 13);
             this.awayLbl4.TabIndex = 12;
-            this.awayLbl4.Text = "Liverpool";
+            this.awayLbl4.Text = " ";
             // 
             // homeLbl4
             // 
             this.homeLbl4.AutoSize = true;
             this.homeLbl4.Location = new System.Drawing.Point(23, 119);
             this.homeLbl4.Name = "homeLbl4";
-            this.homeLbl4.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl4.Size = new System.Drawing.Size(10, 13);
             this.homeLbl4.TabIndex = 11;
-            this.homeLbl4.Text = "Liverpool";
+            this.homeLbl4.Text = " ";
             // 
             // awayLbl3
             // 
             this.awayLbl3.AutoSize = true;
             this.awayLbl3.Location = new System.Drawing.Point(179, 93);
             this.awayLbl3.Name = "awayLbl3";
-            this.awayLbl3.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl3.Size = new System.Drawing.Size(10, 13);
             this.awayLbl3.TabIndex = 10;
-            this.awayLbl3.Text = "Liverpool";
+            this.awayLbl3.Text = " ";
             // 
             // homeLbl3
             // 
             this.homeLbl3.AutoSize = true;
             this.homeLbl3.Location = new System.Drawing.Point(23, 93);
             this.homeLbl3.Name = "homeLbl3";
-            this.homeLbl3.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl3.Size = new System.Drawing.Size(10, 13);
             this.homeLbl3.TabIndex = 9;
-            this.homeLbl3.Text = "Liverpool";
+            this.homeLbl3.Text = " ";
             // 
             // awayLbl2
             // 
             this.awayLbl2.AutoSize = true;
             this.awayLbl2.Location = new System.Drawing.Point(179, 68);
             this.awayLbl2.Name = "awayLbl2";
-            this.awayLbl2.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl2.Size = new System.Drawing.Size(10, 13);
             this.awayLbl2.TabIndex = 8;
-            this.awayLbl2.Text = "Liverpool";
+            this.awayLbl2.Text = " ";
             // 
             // homeLbl2
             // 
             this.homeLbl2.AutoSize = true;
             this.homeLbl2.Location = new System.Drawing.Point(23, 68);
             this.homeLbl2.Name = "homeLbl2";
-            this.homeLbl2.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl2.Size = new System.Drawing.Size(10, 13);
             this.homeLbl2.TabIndex = 7;
-            this.homeLbl2.Text = "Liverpool";
+            this.homeLbl2.Text = " ";
             // 
             // awayLbl1
             // 
             this.awayLbl1.AutoSize = true;
             this.awayLbl1.Location = new System.Drawing.Point(179, 42);
             this.awayLbl1.Name = "awayLbl1";
-            this.awayLbl1.Size = new System.Drawing.Size(50, 13);
+            this.awayLbl1.Size = new System.Drawing.Size(10, 13);
             this.awayLbl1.TabIndex = 6;
-            this.awayLbl1.Text = "Liverpool";
+            this.awayLbl1.Text = " ";
             // 
             // homeLbl1
             // 
             this.homeLbl1.AutoSize = true;
             this.homeLbl1.Location = new System.Drawing.Point(23, 40);
             this.homeLbl1.Name = "homeLbl1";
-            this.homeLbl1.Size = new System.Drawing.Size(50, 13);
+            this.homeLbl1.Size = new System.Drawing.Size(10, 13);
             this.homeLbl1.TabIndex = 5;
-            this.homeLbl1.Text = "Liverpool";
+            this.homeLbl1.Text = " ";
             // 
             // tabPage3
             // 
@@ -1002,51 +1012,6 @@
             this.attDataGridView.Name = "attDataGridView";
             this.attDataGridView.Size = new System.Drawing.Size(1007, 538);
             this.attDataGridView.TabIndex = 0;
-            // 
-            // DefSummaryTab
-            // 
-            this.DefSummaryTab.Controls.Add(this.defDataGrid);
-            this.DefSummaryTab.Location = new System.Drawing.Point(4, 22);
-            this.DefSummaryTab.Name = "DefSummaryTab";
-            this.DefSummaryTab.Padding = new System.Windows.Forms.Padding(3);
-            this.DefSummaryTab.Size = new System.Drawing.Size(1025, 553);
-            this.DefSummaryTab.TabIndex = 3;
-            this.DefSummaryTab.Text = "Defensive Summary";
-            this.DefSummaryTab.UseVisualStyleBackColor = true;
-            // 
-            // defDataGrid
-            // 
-            this.defDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.defDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23,
-            this.Column24,
-            this.Column25,
-            this.Column26,
-            this.Column27,
-            this.Column28,
-            this.Column29});
-            this.defDataGrid.Location = new System.Drawing.Point(8, 12);
-            this.defDataGrid.Name = "defDataGrid";
-            this.defDataGrid.Size = new System.Drawing.Size(897, 535);
-            this.defDataGrid.TabIndex = 0;
-            // 
-            // ResultsWkLbl
-            // 
-            this.ResultsWkLbl.AutoSize = true;
-            this.ResultsWkLbl.Location = new System.Drawing.Point(29, 12);
-            this.ResultsWkLbl.Name = "ResultsWkLbl";
-            this.ResultsWkLbl.Size = new System.Drawing.Size(36, 13);
-            this.ResultsWkLbl.TabIndex = 46;
-            this.ResultsWkLbl.Text = "Week";
             // 
             // Column1
             // 
@@ -1125,6 +1090,42 @@
             this.Column13.HeaderText = "Ave opponent att rank next 6 matches";
             this.Column13.Name = "Column13";
             this.Column13.Width = 60;
+            // 
+            // DefSummaryTab
+            // 
+            this.DefSummaryTab.Controls.Add(this.defDataGrid);
+            this.DefSummaryTab.Location = new System.Drawing.Point(4, 22);
+            this.DefSummaryTab.Name = "DefSummaryTab";
+            this.DefSummaryTab.Padding = new System.Windows.Forms.Padding(3);
+            this.DefSummaryTab.Size = new System.Drawing.Size(1025, 553);
+            this.DefSummaryTab.TabIndex = 3;
+            this.DefSummaryTab.Text = "Defensive Summary";
+            this.DefSummaryTab.UseVisualStyleBackColor = true;
+            // 
+            // defDataGrid
+            // 
+            this.defDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.defDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25,
+            this.Column26,
+            this.Column27,
+            this.Column28,
+            this.Column29});
+            this.defDataGrid.Location = new System.Drawing.Point(8, 12);
+            this.defDataGrid.Name = "defDataGrid";
+            this.defDataGrid.Size = new System.Drawing.Size(897, 535);
+            this.defDataGrid.TabIndex = 0;
             // 
             // Column14
             // 

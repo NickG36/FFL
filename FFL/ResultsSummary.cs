@@ -97,12 +97,18 @@ namespace FFL
         //ResultsByTeam results_by_team;
         //GoalsByTeam attacking_rankings;
 
-        public ResultsSummary(List<CommonTypes.Result> results,
-                              List<CommonTypes.TwoTeams> fixtures,
+        DataGridView attacking_grid;
+        DataGridView defending_grid;
+
+        public ResultsSummary(//List<CommonTypes.Result> results,
+                             // List<CommonTypes.TwoTeams> fixtures,
                               DataGridView att_grid,
                               DataGridView def_grid)
         {
-            reCalculate(results, fixtures, att_grid, def_grid);
+            attacking_grid = att_grid;
+            defending_grid = def_grid;
+
+ //           reCalculate(results, fixtures);
         }
 
         private void populateAttackingTab(
@@ -237,10 +243,10 @@ namespace FFL
             }
         }
 
-        private void reCalculate(List<CommonTypes.Result> results,
-                                 List<CommonTypes.TwoTeams> fixtures,
-                                 DataGridView att_grid,
-                                 DataGridView def_grid)
+        public void reCalculate(List<CommonTypes.Result> results,
+                                 List<CommonTypes.TwoTeams> fixtures)
+                                 //DataGridView att_grid,
+                                 //DataGridView def_grid)
         {
             // Calculate all results team by team
             ResultsByTeam results_by_team = ResultsCalculations.calcResultsByTeam(results);
@@ -262,14 +268,14 @@ namespace FFL
             var defending_ranking = ResultsCalculations.calcAttackingDefRanking(clean_sheets_by_team);
 
             var fixtures_by_team = FixturesCalculations.calcResultsByTeam(fixtures);
-            populateAttackingTab(att_grid, 
+            populateAttackingTab(attacking_grid, 
                                  fixtures_by_team,
                                  goals_scored_by_team  : goals_scored_by_team,
                                  goals_conceded_by_team: goals_conceded_by_team,
                                  attacking_ranking     : attacking_ranking,
                                  defending_ranking     : defending_ranking);
 
-            populateDefendingTab(def_grid,
+            populateDefendingTab(defending_grid,
                                  fixtures_by_team,
                                  goals_scored_by_team  : goals_scored_by_team,
                                  goals_conceded_by_team: goals_conceded_by_team,

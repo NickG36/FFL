@@ -19,6 +19,7 @@ namespace FFL
         List<String> remaining_teams = new List<String>();
         Fixtures fixtures = new ExcelFixtures();
         Results results = new ExcelResults();
+        ResultsSummary res_summary;
 
         public MainForm()
         {
@@ -54,6 +55,12 @@ namespace FFL
 
             resetCBs();
             updateFixturesPane(false);
+            res_summary = new ResultsSummary(att_grid: attDataGridView,
+                                             def_grid: defDataGrid);
+
+            if(results.doesFileExist() )
+                res_summary.reCalculate(results.getAllResults(),
+                                        fixtures.readAllFixtures());
         }
 
 
@@ -75,12 +82,7 @@ namespace FFL
             enableCB(0);
         }
 
-        private void mouseClickFn(object sender, MouseEventArgs e)
-        {
-
-         }
-
-        private void onLoad(object sender, EventArgs e)
+       private void onLoad(object sender, EventArgs e)
         {
             enableCB(0);
         }
@@ -279,9 +281,9 @@ namespace FFL
             {
                 if (inform)
                 {
-                    var result = MessageBox.Show($"Can't find fixtures file. No fixtures found",
-                                                 "Fixtures file not found",
-                                                  MessageBoxButtons.OK);
+                    MessageBox.Show($"Can't find fixtures file. No fixtures found",
+                                    "Fixtures file not found",
+                                    MessageBoxButtons.OK);
                 }
             }
             else
@@ -315,6 +317,8 @@ namespace FFL
             var result = MessageBox.Show($"This will put these results in the Results.csv file, remove these fixtures from the Fixtures.csv file and update the Results panes.",
                                          "Updating",
                                          MessageBoxButtons.OK);
+            fixtures.deleteFirstBlock();
+            updateFixturesPane(false);
 
             results.addText(ResultsWkLbl.Text);
             results.addResult(homeLbl1.Text, awayLbl1.Text,
@@ -347,10 +351,10 @@ namespace FFL
             results.addResult(homeLbl10.Text, awayLbl10.Text,
                               (ushort)homeScore10.Value, (ushort)awayScore10.Value);
 
-            ResultsSummary res_sum = new ResultsSummary(results.getAllResults(), 
-                                                        fixtures.readAllFixtures(), 
-                                                        att_grid: attDataGridView,
-                                                        def_grid: defDataGrid);
+            res_summary.reCalculate(results.getAllResults(),
+                                    fixtures.readAllFixtures());
+
+            commitResBtn.Enabled = false;
         }
 
         private void populateResultsClick(object sender, EventArgs e)
@@ -388,6 +392,7 @@ namespace FFL
             homeLbl10.Text = next_fixtures.fixtures[9].home;
             awayLbl10.Text = next_fixtures.fixtures[9].away;
 
+            commitResBtn.Enabled = true;
         }
 
         private void fixturesResetClick(object sender, EventArgs e)
