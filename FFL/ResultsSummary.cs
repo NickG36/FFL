@@ -9,11 +9,15 @@ using System.Windows.Forms;
 
 namespace FFL
 {
-    using ResultList = List<CommonTypes.TeamResult>;
-
     using ResultsByTeam =
        System.Collections.Generic.Dictionary<CommonTypes.TeamName, 
                                              List<CommonTypes.TeamResult>>;
+
+    using GoalsByTeam = Dictionary<CommonTypes.TeamName, CommonTypes.GoalsCount>;
+
+    using RankingByTeam = Dictionary<CommonTypes.TeamName, ushort>;
+
+    using FixturesByTeam = Dictionary<CommonTypes.TeamName, List<CommonTypes.Fixture>>;
 
     public class ResultsSummary
     {
@@ -36,11 +40,22 @@ namespace FFL
             }
         }
 
-#warning "Change param names to be generic"
+        /// <summary>
+        /// formFixtureFields will return info needed to populate the upcoming fixture columns of
+        /// the Attacking or Defending dataGridView. 
+        /// It should be called with goals conceded for the goals_by_team parameter and 
+        /// the defensive ranking list for the team_ranking to provide fixture data for the 
+        /// Attacking dataGridView, and vice-versa for the Defending view.
+        /// </summary>
+        /// <param name="goals_by_team">Goals scored/conceded as appropriate</param>
+        /// <param name="fixtures_by_team"></param>
+        /// <param name="team_ranking">Attacking/defensive ranking</param>
+        /// <param name="team_nm"></param>
+        /// <returns></returns>
         private static FixtureDetails formFixtureFields(
-                                    Dictionary<CommonTypes.TeamName, CommonTypes.GoalsCount> goals_conceded_by_team,
-                                    Dictionary<CommonTypes.TeamName, List<CommonTypes.Fixture>> fixtures_by_team,
-                                    Dictionary<CommonTypes.TeamName, ushort> defensive_ranking,
+                                    GoalsByTeam          goals_by_team,
+                                    FixturesByTeam       fixtures_by_team,
+                                    RankingByTeam        team_ranking,
                                     CommonTypes.TeamName team_nm)
         {
             var result = new FixtureDetails();
@@ -48,9 +63,7 @@ namespace FFL
             List<CommonTypes.Fixture> next_fixtures = fixtures_by_team[team_nm];
 
             ushort num_home_matches = 0;
-
-            ushort tot_opp_goals_conceded = 0;
-
+            ushort tot_opp_goals = 0; // Scored/conceded as appropriate for this call
             ushort tot_opp_ranking = 0;
 
             for (int idx = 0; idx < FixtureDetails.NUM_MATCHES_CONSIDERED; ++idx)
@@ -65,11 +78,11 @@ namespace FFL
                 CommonTypes.Fixture curr_fixture = next_fixtures[idx];
                 CommonTypes.TeamName opponent = curr_fixture.opponent;
 
-                tot_opp_goals_conceded += goals_conceded_by_team[opponent].last6;
+                tot_opp_goals += goals_by_team[opponent].last6;
 
                 string opponent_str = GenUtils.getInstance().ToShortString(opponent);
 
-                ushort ranking = defensive_ranking[opponent];
+                ushort ranking = team_ranking[opponent];
                 opponent_str += ranking;
 
                 tot_opp_ranking += ranking;
@@ -86,28 +99,21 @@ namespace FFL
 
                 result.next_fixtures[idx] = opponent_str;
             } // end opponent loop
-            result.num_goals = tot_opp_goals_conceded;
+            result.num_goals = tot_opp_goals;
             result.num_home_matches = num_home_matches;
 
             result.ave_opp_ranking = (ushort)(tot_opp_ranking / result.num_fixtures_stored);
 
             return result;
         }
-        //List<CommonTypes.Result> all_results;
-        //ResultsByTeam results_by_team;
-        //GoalsByTeam attacking_rankings;
 
         DataGridView attacking_grid;
         DataGridView defending_grid;
 
-        public ResultsSummary(//List<CommonTypes.Result> results,
-                             // List<CommonTypes.TwoTeams> fixtures,
-                              DataGridView att_grid,
-                              DataGridView def_grid)
+        public ResultsSummary(DataGridView att_grid, DataGridView def_grid)
         {
             attacking_grid = att_grid;
             defending_grid = def_grid;
-
         }
 
         private void resetGrid(DataGridView dataGridView)
@@ -115,13 +121,22 @@ namespace FFL
             dataGridView.Rows.Clear();
         }
 
+        /// <summary>
+        /// Will add rows to the attacking dataGridView, with individual columns set up appropriately.
+        /// </summary>
+        /// <param name="dataGridView"></param>
+        /// <param name="fixtures_by_team"></param>
+        /// <param name="goals_scored_by_team"></param>
+        /// <param name="goals_conceded_by_team"></param>
+        /// <param name="attacking_ranking"></param>
+        /// <param name="defending_ranking"></param>
         private void populateAttackingTab(
-                          DataGridView dataGridView,
-                          Dictionary<CommonTypes.TeamName, List<CommonTypes.Fixture>> fixtures_by_team,
-                          Dictionary<CommonTypes.TeamName, CommonTypes.GoalsCount> goals_scored_by_team,
-                          Dictionary<CommonTypes.TeamName, CommonTypes.GoalsCount> goals_conceded_by_team,
-                          Dictionary<CommonTypes.TeamName, ushort> attacking_ranking,
-                          Dictionary<CommonTypes.TeamName, ushort> defending_ranking)
+                          DataGridView   dataGridView,
+                          FixturesByTeam fixtures_by_team,
+                          GoalsByTeam    goals_scored_by_team,
+                          GoalsByTeam    goals_conceded_by_team,
+                          RankingByTeam  attacking_ranking,
+                          RankingByTeam  defending_ranking)
         {
             // Define column indices
             const int RANK_IDX = 0;
@@ -135,7 +150,6 @@ namespace FFL
             const int FIXTURE_4_IDX = 8;
             const int FIXTURE_5_IDX = 9;
             const int FIXTURE_6_IDX = 10;
-  //          const int NUM_GOALS_IDX = 11;
             const int NUM_HOME_MATCHES_IDX = 11;
             const int AVE_OPP_RANK_IDX = 12;
 
@@ -145,8 +159,7 @@ namespace FFL
             {
                 List<CommonTypes.Fixture> next_fixtures = fixtures_by_team[team_nm];
 
-                //int curr_col_idx = 0;
-                string[] curr_row_str = new string[15];
+                string[] curr_row_str = new string[13];
 
                 ushort att_rank = attacking_ranking[team_nm];
 
@@ -185,14 +198,25 @@ namespace FFL
 
         }
 
+        /// <summary>
+        /// Will add rows to the defending dataGridView, with individual columns set up appropriately.
+        /// </summary>
+        /// <param name="dataGridView"></param>
+        /// <param name="fixtures_by_team"></param>
+        /// <param name="goals_scored_by_team"></param>
+        /// <param name="goals_conceded_by_team"></param>
+        /// <param name="clean_sheets_by_team"></param>
+        /// <param name="attacking_ranking"></param>
+        /// <param name="defending_ranking"></param>
+
         private void populateDefendingTab(
-                  DataGridView dataGridView,
-                  Dictionary<CommonTypes.TeamName, List<CommonTypes.Fixture>> fixtures_by_team,
-                  Dictionary<CommonTypes.TeamName, CommonTypes.GoalsCount> goals_scored_by_team,
-                  Dictionary<CommonTypes.TeamName, CommonTypes.GoalsCount> goals_conceded_by_team,
-                  Dictionary<CommonTypes.TeamName, CommonTypes.GoalsCount> clean_sheets_by_team,
-                  Dictionary<CommonTypes.TeamName, ushort> attacking_ranking,
-                  Dictionary<CommonTypes.TeamName, ushort> defending_ranking)
+                  DataGridView   dataGridView,
+                  FixturesByTeam fixtures_by_team,
+                  GoalsByTeam    goals_scored_by_team,
+                  GoalsByTeam    goals_conceded_by_team,
+                  GoalsByTeam    clean_sheets_by_team,
+                  RankingByTeam  attacking_ranking,
+                  RankingByTeam  defending_ranking)
         {
             // Define column indices
             const int RANK_IDX = 0;
@@ -228,12 +252,12 @@ namespace FFL
                     curr_row_str[RANK_IDX] = att_rank.ToString();
 
                 curr_row_str[TEAM_NAME_IDX] = GenUtils.getInstance().ToShortString(team_nm);
-                curr_row_str[GOALS_CONCEDED_10_IDX] = goals_conceded_by_team[team_nm].last10.ToString();
-                curr_row_str[GOALS_CONCEDED_6_IDX] = goals_conceded_by_team[team_nm].last6.ToString();
+                curr_row_str[GOALS_CONCEDED_10_IDX]  = goals_conceded_by_team[team_nm].last10.ToString();
+                curr_row_str[GOALS_CONCEDED_6_IDX]   = goals_conceded_by_team[team_nm].last6.ToString();
                 curr_row_str[GOALS_CONCEDED_TOT_IDX] = goals_conceded_by_team[team_nm].total.ToString();
 
-                curr_row_str[CLEAN_SHEETS_10_IDX] = clean_sheets_by_team[team_nm].last10.ToString();
-                curr_row_str[CLEAN_SHEETS_6_IDX] = clean_sheets_by_team[team_nm].last6.ToString();
+                curr_row_str[CLEAN_SHEETS_10_IDX]  = clean_sheets_by_team[team_nm].last10.ToString();
+                curr_row_str[CLEAN_SHEETS_6_IDX]   = clean_sheets_by_team[team_nm].last6.ToString();
                 curr_row_str[CLEAN_SHEETS_TOT_IDX] = clean_sheets_by_team[team_nm].total.ToString();
 
                 FixtureDetails fixture_dets = formFixtureFields(goals_conceded_by_team,
@@ -251,7 +275,6 @@ namespace FFL
                 curr_row_str[AVE_OPP_RANK_IDX] = fixture_dets.ave_opp_ranking.ToString();
 
                 dataGridView.Rows.Add(curr_row_str);
-
             }
 
             for (int row_idx = 0; row_idx < 20; ++row_idx)
@@ -260,8 +283,8 @@ namespace FFL
             }
         }
 
-        public void reCalculate(List<CommonTypes.Result> results,
-                                 List<CommonTypes.TwoTeams> fixtures)
+        public void reCalculate(List<CommonTypes.Result>   results,
+                                List<CommonTypes.TwoTeams> fixtures)
         {
             // Calculate all results team by team
             ResultsByTeam results_by_team = ResultsCalculations.calcResultsByTeam(results);

@@ -12,6 +12,9 @@ namespace FFL
        System.Collections.Generic.Dictionary<CommonTypes.TeamName,
                                              List<CommonTypes.TeamResult>>;
 
+    /// <summary>
+    /// General utilities to manipulate sets of results
+    /// </summary>
     public class ResultsCalculations
     {
         /// <summary>
@@ -24,7 +27,7 @@ namespace FFL
         private static ResultList filterAllResults(List<CommonTypes.Result> all_results,
                                                    CommonTypes.TeamName filter_team)
         {
-            ResultList result = new ResultList();
+            var result = new ResultList();
 
             foreach (CommonTypes.Result curr_res in all_results)
             {
@@ -48,7 +51,7 @@ namespace FFL
             } // end foreach
             return result;
 
-        } // end filterAllResults
+        } 
 
         /// <summary>
         /// calcResultsByTeam returns a dictionary type which maps each team onto a list
@@ -129,10 +132,18 @@ namespace FFL
                                               total : total);
         }
 
+        /// <summary>
+        /// Takes in the goals scored/conceded/clean sheets by team and will create a 
+        /// ranking list using that info. It will return a mapping from team name to 
+        /// ranking position
+        /// </summary>
+        /// <param name="goals_scored_conceded"></param>
+        /// <returns></returns>
         public static Dictionary<CommonTypes.TeamName, ushort> calcAttackingDefRanking(GoalsByTeam goals_scored_conceded)
         {
             var result = new Dictionary<CommonTypes.TeamName, ushort>();
 
+            // Use a sorted dictionary to automatically perform the sorting into ranking order
             var ranked_order = new SortedDictionary<CommonTypes.GoalsCountWithTeam,
                                                     CommonTypes.TeamName>(new GoalsScoredComparitor());
             foreach (CommonTypes.TeamName team_nm in Enum.GetValues(typeof(CommonTypes.TeamName)))
@@ -144,7 +155,7 @@ namespace FFL
                 ranked_order.Add(goals_with_team, team_nm);
             }
 
-            // Add by team into result
+            // Now we have the ranking list, add each team's ranking into into result
             foreach (CommonTypes.TeamName team_nm in Enum.GetValues(typeof(CommonTypes.TeamName)))
             {
                 ushort rank = 0;
@@ -162,6 +173,9 @@ namespace FFL
 
         }
 
+        /// <summary>
+        /// The comparitor used to rank teams by the given criteria.
+        /// </summary>
         class GoalsScoredComparitor : IComparer<CommonTypes.GoalsCountWithTeam>
         {
             public int Compare(CommonTypes.GoalsCountWithTeam lhs,

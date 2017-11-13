@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 /// <summary>
-/// Summary description for Fixtures
+/// Used to interface with the Fixtures store
 /// </summary>
 namespace FFL
 { 
@@ -21,11 +21,13 @@ namespace FFL
         /// <returns></returns>
         abstract public bool fileExistsCanCreate();
 
-        abstract public void addText(String str);
-        abstract public void addTeams(String home, String away);
-
         /// <summary>
-        /// A FixturesBlock represents one week's set of fixtures
+        /// Used in error messages
+        /// </summary>
+        /// <returns></returns>
+        abstract public string getPathToFile();
+        /// <summary>
+        /// A FixturesBlock represents one set of fixtures (normally one week's worth)
         /// </summary>
         public class FixturesBlock
         {
@@ -36,6 +38,8 @@ namespace FFL
             public string week_description;
             public List<CommonTypes.TwoTeams> fixtures;
         }
+
+        abstract public void addBlock(FixturesBlock new_fixtures);
 
         abstract public FixturesBlock readFirstBlock();
         abstract public void deleteFirstBlock();

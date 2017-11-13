@@ -10,7 +10,7 @@ namespace FFL
 {
     public class ExcelFixtures : Fixtures
     {
-        const string fileName = "Fixtures.csv";
+        public const string fileName = "Fixtures.csv";
         const string tempFileName = "Fixtures_temp.csv";
 
         StreamReader reader;
@@ -26,6 +26,7 @@ namespace FFL
             return does_exist;
         }
 
+        public override string getPathToFile() => Path.GetFullPath(fileName);
         /// <summary>
         /// Returns true if the Fixtures file exists, false otherwise.
         /// If it doesn't exist, the user will be asked if it should be created.
@@ -38,7 +39,7 @@ namespace FFL
 
             if (!File.Exists(fileName))
             {
-                var full_path = Path.GetFullPath(fileName);
+                var full_path = getPathToFile();
                 var result = MessageBox.Show($"Can't find file {full_path}. Shall I create it?",
                                            "Fixtures.csv not found",
                                             MessageBoxButtons.YesNo);
@@ -60,29 +61,22 @@ namespace FFL
         }
 
         /// <summary>
-        /// It is assumed that the fixtures file exists before this method is called
+        /// Stores an extra FixturesBlock in the Fixtures file.
+        /// It is assumed that the fixtures file exists before this method is called.
         /// </summary>
-        /// <param name="newText"></param>
-        public override void addText(string newText)
+        /// <param name="new_fixtures"></param>
+        public override void addBlock(FixturesBlock new_fixtures)
         {
             using (StreamWriter w = File.AppendText(fileName))
             {
-                w.WriteLine(",," + newText);
-            }
-        }
+                w.WriteLine(",," + new_fixtures.week_description);
 
-        /// <summary>
-        /// It is assumed that the fixtures file exists before this method is called
-        /// </summary>
-        /// <param name="home"></param>
-        /// <param name="away"></param>
-        public override void addTeams(string home, string away)
-        {
-            using (StreamWriter w = File.AppendText(fileName))
-            {
-                w.Write(home);
-                w.Write(",");
-                w.WriteLine(away);
+                foreach (var curr_fixture in new_fixtures.fixtures)
+                {
+                    w.Write(curr_fixture.home);
+                    w.Write(",");
+                    w.WriteLine(curr_fixture.away);
+                }
             }
         }
 
@@ -145,7 +139,6 @@ namespace FFL
         public override FixturesBlock readFirstBlock()
         {
             FixturesBlock result = new FixturesBlock();
-//            result.fixtures = new List<CommonTypes.TwoTeams>();
 
             bool startFound = false;
 
@@ -213,7 +206,6 @@ namespace FFL
                         }
 
                         fixtures_block = new FixturesBlock();
-                        fixtures_block.fixtures = new List<CommonTypes.TwoTeams>();
 
                         // Remove the initial commas and fetch the week description
                         string[] week_descr_line = curr_line.Split(',');

@@ -238,19 +238,26 @@ namespace FFL
         {
             var week_name = weekTB.Text;
 
+            var new_fixtures = new Fixtures.FixturesBlock();
+
             if (fixtures.fileExistsCanCreate())
             {
-                fixtures.addText(week_name);
+                new_fixtures.week_description = week_name;
 
                 // Alternate CBs are home and away
                 for (int cb_idx = 0; cb_idx < GenUtils.NUM_TEAMS / 2; ++cb_idx)
                 {
                     var home_str = all_cbs[cb_idx*2].Text;
                     var away_str = all_cbs[cb_idx*2 + 1].Text;
+                    var new_fixture = new CommonTypes.TwoTeams(home: home_str,
+                                                               away: away_str);
 
-                    fixtures.addTeams(home: home_str, away: away_str);
+                    new_fixtures.fixtures.Add(new_fixture);
                 }
             }
+
+            fixtures.addBlock(new_fixtures);
+
             resetCBs();
             weekTB.Text = "";
             // Update the pane showing fixtures
@@ -285,7 +292,9 @@ namespace FFL
             {
                 if (inform)
                 {
-                    MessageBox.Show($"Can't find fixtures file. No fixtures found",
+                    var path = fixtures.getPathToFile();
+
+                    MessageBox.Show($"Can't find fixtures file at {path}. No fixtures found",
                                     "Fixtures file not found",
                                     MessageBoxButtons.OK);
                 }
@@ -359,43 +368,71 @@ namespace FFL
 
         private void commitResBtn_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show($"This will put these results in the Results.csv file, remove these fixtures from the Fixtures.csv file and update the Results panes.",
-                                         "Updating",
-                                         MessageBoxButtons.OK);
+            MessageBox.Show($"This will put these results in the Results.csv file, remove these fixtures from the Fixtures.csv file and update the Results panes.",
+                            "Updating",
+                            MessageBoxButtons.OK);
+
             fixtures.deleteFirstBlock();
             updateFixturesPane(false);
 
-            results.addText(ResultsWkLbl.Text);
-            results.addResult(homeLbl1.Text, awayLbl1.Text,
-                              (ushort)homeScore1.Value, (ushort)awayScore1.Value);
+            var res_block = new Results.ResultsBlock();
 
-            results.addResult(homeLbl2.Text, awayLbl2.Text,
-                              (ushort)homeScore2.Value, (ushort)awayScore2.Value);
+            res_block.week_description = ResultsWkLbl.Text;
 
-            results.addResult(homeLbl3.Text, awayLbl3.Text,
-                              (ushort)homeScore3.Value, (ushort)awayScore3.Value);
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl1.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl1.Text),
+                                        home_score: (ushort)homeScore1.Value,
+                                        away_score: (ushort)awayScore1.Value));
 
-            results.addResult(homeLbl4.Text, awayLbl4.Text,
-                              (ushort)homeScore4.Value, (ushort)awayScore4.Value);
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl2.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl2.Text),
+                                        home_score: (ushort)homeScore2.Value,
+                                        away_score: (ushort)awayScore2.Value));
 
-            results.addResult(homeLbl5.Text, awayLbl5.Text,
-                              (ushort)homeScore5.Value, (ushort)awayScore5.Value);
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl3.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl3.Text),
+                                        home_score: (ushort)homeScore3.Value,
+                                        away_score: (ushort)awayScore3.Value));
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl4.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl4.Text),
+                                        home_score: (ushort)homeScore4.Value,
+                                        away_score: (ushort)awayScore4.Value));
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl5.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl5.Text),
+                                        home_score: (ushort)homeScore5.Value,
+                                        away_score: (ushort)awayScore5.Value));
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl6.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl6.Text),
+                                        home_score: (ushort)homeScore6.Value,
+                                        away_score: (ushort)awayScore6.Value));
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl7.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl7.Text),
+                                        home_score: (ushort)homeScore7.Value,
+                                        away_score: (ushort)awayScore7.Value));
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl8.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl8.Text),
+                                        home_score: (ushort)homeScore8.Value,
+                                        away_score: (ushort)awayScore8.Value));
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl9.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl9.Text),
+                                        home_score: (ushort)homeScore9.Value,
+                                        away_score: (ushort)awayScore9.Value));
+            res_block.results.Add(
+                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl10.Text),
+                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl10.Text),
+                                        home_score: (ushort)homeScore10.Value,
+                                        away_score: (ushort)awayScore10.Value));
 
-            results.addResult(homeLbl6.Text, awayLbl6.Text,
-                              (ushort)homeScore6.Value, (ushort)awayScore6.Value);
-
-            results.addResult(homeLbl7.Text, awayLbl7.Text,
-                              (ushort)homeScore7.Value, (ushort)awayScore7.Value);
-
-            results.addResult(homeLbl8.Text, awayLbl8.Text,
-                              (ushort)homeScore8.Value, (ushort)awayScore8.Value);
-
-            results.addResult(homeLbl9.Text, awayLbl9.Text,
-                              (ushort)homeScore9.Value, (ushort)awayScore9.Value);
-
-            results.addResult(homeLbl10.Text, awayLbl10.Text,
-                              (ushort)homeScore10.Value, (ushort)awayScore10.Value);
-
+            results.addResultsBlock(res_block);
             updateExistingResults(false);
 
             res_summary.reCalculate(results.getAllResults(),
@@ -403,6 +440,11 @@ namespace FFL
 
             commitResBtn.Enabled = false;
 
+            clearInputFields();
+        }
+
+        private void clearInputFields()
+        {
             homeScore1.Value = 0; awayScore1.Value = 0;
             homeScore2.Value = 0; awayScore2.Value = 0;
             homeScore3.Value = 0; awayScore3.Value = 0;
@@ -429,40 +471,51 @@ namespace FFL
 
         private void populateResultsClick(object sender, EventArgs e)
         {
-            Fixtures.FixturesBlock next_fixtures = fixtures.readFirstBlock();
+            if (fixtures.doesFileExist())
+            {
+                Fixtures.FixturesBlock next_fixtures = fixtures.readFirstBlock();
 
-            ResultsWkLbl.Text = next_fixtures.week_description;
-            homeLbl1.Text = next_fixtures.fixtures[0].home;
-            awayLbl1.Text = next_fixtures.fixtures[0].away;
+                ResultsWkLbl.Text = next_fixtures.week_description;
+                homeLbl1.Text = next_fixtures.fixtures[0].home;
+                awayLbl1.Text = next_fixtures.fixtures[0].away;
 
-            homeLbl2.Text = next_fixtures.fixtures[1].home;
-            awayLbl2.Text = next_fixtures.fixtures[1].away;
+                homeLbl2.Text = next_fixtures.fixtures[1].home;
+                awayLbl2.Text = next_fixtures.fixtures[1].away;
 
-            homeLbl3.Text = next_fixtures.fixtures[2].home;
-            awayLbl3.Text = next_fixtures.fixtures[2].away;
+                homeLbl3.Text = next_fixtures.fixtures[2].home;
+                awayLbl3.Text = next_fixtures.fixtures[2].away;
 
-            homeLbl4.Text = next_fixtures.fixtures[3].home;
-            awayLbl4.Text = next_fixtures.fixtures[3].away;
+                homeLbl4.Text = next_fixtures.fixtures[3].home;
+                awayLbl4.Text = next_fixtures.fixtures[3].away;
 
-            homeLbl5.Text = next_fixtures.fixtures[4].home;
-            awayLbl5.Text = next_fixtures.fixtures[4].away;
+                homeLbl5.Text = next_fixtures.fixtures[4].home;
+                awayLbl5.Text = next_fixtures.fixtures[4].away;
 
-            homeLbl6.Text = next_fixtures.fixtures[5].home;
-            awayLbl6.Text = next_fixtures.fixtures[5].away;
+                homeLbl6.Text = next_fixtures.fixtures[5].home;
+                awayLbl6.Text = next_fixtures.fixtures[5].away;
 
-            homeLbl7.Text = next_fixtures.fixtures[6].home;
-            awayLbl7.Text = next_fixtures.fixtures[6].away;
+                homeLbl7.Text = next_fixtures.fixtures[6].home;
+                awayLbl7.Text = next_fixtures.fixtures[6].away;
 
-            homeLbl8.Text = next_fixtures.fixtures[7].home;
-            awayLbl8.Text = next_fixtures.fixtures[7].away;
+                homeLbl8.Text = next_fixtures.fixtures[7].home;
+                awayLbl8.Text = next_fixtures.fixtures[7].away;
 
-            homeLbl9.Text = next_fixtures.fixtures[8].home;
-            awayLbl9.Text = next_fixtures.fixtures[8].away;
+                homeLbl9.Text = next_fixtures.fixtures[8].home;
+                awayLbl9.Text = next_fixtures.fixtures[8].away;
 
-            homeLbl10.Text = next_fixtures.fixtures[9].home;
-            awayLbl10.Text = next_fixtures.fixtures[9].away;
+                homeLbl10.Text = next_fixtures.fixtures[9].home;
+                awayLbl10.Text = next_fixtures.fixtures[9].away;
 
-            commitResBtn.Enabled = true;
+                commitResBtn.Enabled = true;
+            }
+            else
+            {
+                var path = fixtures.getPathToFile();
+                MessageBox.Show($"Can't find fixtures file: {path}. No fixtures found",
+                                "Fixtures file not found",
+                                MessageBoxButtons.OK);
+
+            }
         }
 
         private void fixturesResetClick(object sender, EventArgs e)

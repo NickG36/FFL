@@ -11,30 +11,10 @@ namespace FFL
     public class ExcelResults : Results
     {
         const string fileName = "Results.csv";
-        StreamReader reader;
-
-        public override void addText(string newText)
-        {
-            if(!File.Exists(fileName))
-            {
-                using (File.CreateText(fileName))
-                {
-                    Console.WriteLine("Have created file");
-                }
-            }
-
-            using (StreamWriter writer = File.AppendText(fileName))
-            {
-                writer.WriteLine(",," + newText);
-            }
-        }
 
         public override bool doesFileExist() => File.Exists(fileName);
-        
-        public override void addResult(string home_team, 
-                                       string away_team,
-                                       ushort home_score,
-                                       ushort away_score)
+
+        public override void addResultsBlock(ResultsBlock results_block)
         {
             if (!File.Exists(fileName))
             {
@@ -46,13 +26,18 @@ namespace FFL
 
             using (StreamWriter writer = File.AppendText(fileName))
             {
-                writer.Write(home_team);
-                writer.Write(",");
-                writer.Write(home_score);
-                writer.Write(",");
-                writer.Write(away_score);
-                writer.Write(",");
-                writer.WriteLine(away_team);
+                writer.WriteLine(",," + results_block.week_description);
+
+                foreach (var curr_result in results_block.results)
+                {
+                    writer.Write(GenUtils.getInstance().ToLongString(curr_result.home_team) );
+                    writer.Write(",");
+                    writer.Write(curr_result.home_score);
+                    writer.Write(",");
+                    writer.Write(curr_result.away_score);
+                    writer.Write(",");
+                    writer.WriteLine(GenUtils.getInstance().ToLongString(curr_result.away_team) );
+                }
             }
         }
 
@@ -60,7 +45,7 @@ namespace FFL
         {
             List<CommonTypes.Result> result = new List<CommonTypes.Result>();
 
-            using (reader = new StreamReader(fileName))
+            using (StreamReader reader = new StreamReader(fileName))
             {
                 String curr_line = "";
 
@@ -92,9 +77,8 @@ namespace FFL
             bool pending_fixtures = false; // True if fixtures still need adding to result
 
             ResultsBlock results_block = new ResultsBlock();
-//            fixtures_block.fixtures = new List<CommonTypes.TwoTeams>();
 
-            using (reader = new StreamReader(fileName))
+            using (StreamReader reader = new StreamReader(fileName))
             {
                 while ((curr_line = reader.ReadLine()) != null)
                 {
@@ -135,8 +119,6 @@ namespace FFL
             return result;
 
         }
-
-
     }
 
 }

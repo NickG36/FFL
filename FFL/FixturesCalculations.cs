@@ -10,8 +10,17 @@ namespace FFL
     using FixturesByTeam =
         Dictionary<CommonTypes.TeamName, List<CommonTypes.Fixture>>;
 
+    /// <summary>
+    /// Utility methods to manipulate fixtures
+    /// </summary>
     class FixturesCalculations
     {
+        /// <summary>
+        /// Returns all the fixtures that involved the filter_team
+        /// </summary>
+        /// <param name="all_fixtures"></param>
+        /// <param name="filter_team"></param>
+        /// <returns></returns>
         public static List<CommonTypes.Fixture> filterAllFixtures(List<CommonTypes.TwoTeams> all_fixtures,
                                                                   CommonTypes.TeamName filter_team)
         {
@@ -39,6 +48,11 @@ namespace FFL
             return result;
         }
 
+        /// <summary>
+        /// Looks through all the fixtures and provides a lists of fixtures by team
+        /// </summary>
+        /// <param name="all_fixtures"></param>
+        /// <returns></returns>
         public static FixturesByTeam calcResultsByTeam(List<CommonTypes.TwoTeams> all_fixtures)
         {
             var result = new FixturesByTeam();
