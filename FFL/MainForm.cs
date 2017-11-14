@@ -48,7 +48,7 @@ namespace FFL
             foreach (CommonTypes.TeamName team_nm in
                       Enum.GetValues(typeof(CommonTypes.TeamName)))
             {
-                all_teams_list.Add(GenUtils.getInstance().ToLongString(team_nm));
+                all_teams_list.Add(GenUtils.ToLongString(team_nm));
             }
 
             all_teams = new ReadOnlyCollection<String>(all_teams_list);
@@ -380,55 +380,55 @@ namespace FFL
             res_block.week_description = ResultsWkLbl.Text;
 
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl1.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl1.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl1.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl1.Text),
                                         home_score: (ushort)homeScore1.Value,
                                         away_score: (ushort)awayScore1.Value));
 
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl2.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl2.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl2.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl2.Text),
                                         home_score: (ushort)homeScore2.Value,
                                         away_score: (ushort)awayScore2.Value));
 
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl3.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl3.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl3.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl3.Text),
                                         home_score: (ushort)homeScore3.Value,
                                         away_score: (ushort)awayScore3.Value));
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl4.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl4.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl4.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl4.Text),
                                         home_score: (ushort)homeScore4.Value,
                                         away_score: (ushort)awayScore4.Value));
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl5.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl5.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl5.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl5.Text),
                                         home_score: (ushort)homeScore5.Value,
                                         away_score: (ushort)awayScore5.Value));
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl6.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl6.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl6.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl6.Text),
                                         home_score: (ushort)homeScore6.Value,
                                         away_score: (ushort)awayScore6.Value));
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl7.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl7.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl7.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl7.Text),
                                         home_score: (ushort)homeScore7.Value,
                                         away_score: (ushort)awayScore7.Value));
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl8.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl8.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl8.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl8.Text),
                                         home_score: (ushort)homeScore8.Value,
                                         away_score: (ushort)awayScore8.Value));
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl9.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl9.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl9.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl9.Text),
                                         home_score: (ushort)homeScore9.Value,
                                         away_score: (ushort)awayScore9.Value));
             res_block.results.Add(
-                 new CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(homeLbl10.Text),
-                                        away_team: GenUtils.getInstance().ToTeamName(awayLbl10.Text),
+                 new CommonTypes.Result(home_team: GenUtils.ToTeamName(homeLbl10.Text),
+                                        away_team: GenUtils.ToTeamName(awayLbl10.Text),
                                         home_score: (ushort)homeScore10.Value,
                                         away_score: (ushort)awayScore10.Value));
 

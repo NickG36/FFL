@@ -6,22 +6,10 @@ using System.Collections.Generic;
 /// </summary>
 public class GenUtils
 {
-    // 
-    // Make class a singleton
-    //
-    private static GenUtils instance = null;
-
-    static public GenUtils getInstance()
-    {
-        if (instance == null)
-            instance = new GenUtils();
-        return instance;
-    }
-
     static Dictionary<CommonTypes.TeamName, string> long_team_names = new Dictionary<CommonTypes.TeamName, string>();
     static Dictionary<CommonTypes.TeamName, string> short_team_names = new Dictionary<CommonTypes.TeamName, string>();
 
-    private GenUtils()
+    static GenUtils()
 	{
         short_team_names.Add(CommonTypes.TeamName.ARS, ARS_STR);
         short_team_names.Add(CommonTypes.TeamName.BOU, BOU_STR);
@@ -66,12 +54,12 @@ public class GenUtils
         long_team_names.Add(CommonTypes.TeamName.WHA, WEST_HAM_STR);
     }
 
-    public string ToLongString(CommonTypes.TeamName team) => long_team_names[team];
-    public string ToShortString(CommonTypes.TeamName team) => short_team_names[team];
+    static public string ToLongString(CommonTypes.TeamName team) => long_team_names[team];
+    static public string ToShortString(CommonTypes.TeamName team) => short_team_names[team];
 
     // TO DO: If performance becomes an issue, store a mapping from strings to 
     // TeamNames.
-    public CommonTypes.TeamName ToTeamName(string team)
+    static public CommonTypes.TeamName ToTeamName(string team)
     {
         CommonTypes.TeamName result = new CommonTypes.TeamName();
 

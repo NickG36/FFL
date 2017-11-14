@@ -80,7 +80,7 @@ namespace FFL
 
                 tot_opp_goals += goals_by_team[opponent].last6;
 
-                string opponent_str = GenUtils.getInstance().ToShortString(opponent);
+                string opponent_str = GenUtils.ToShortString(opponent);
 
                 ushort ranking = team_ranking[opponent];
                 opponent_str += ranking;
@@ -168,7 +168,7 @@ namespace FFL
                 else
                   curr_row_str[RANK_IDX] = att_rank.ToString();
 
-                curr_row_str[TEAM_NAME_IDX] = GenUtils.getInstance().ToShortString(team_nm);
+                curr_row_str[TEAM_NAME_IDX] = GenUtils.ToShortString(team_nm);
                 curr_row_str[GOALS_SCORED_10_IDX] = goals_scored_by_team[team_nm].last10.ToString();
                 curr_row_str[GOALS_SCORED_6_IDX] = goals_scored_by_team[team_nm].last6.ToString();
                 curr_row_str[GOALS_SCORED_TOT_IDX] = goals_scored_by_team[team_nm].total.ToString();
@@ -251,7 +251,7 @@ namespace FFL
                 else
                     curr_row_str[RANK_IDX] = att_rank.ToString();
 
-                curr_row_str[TEAM_NAME_IDX] = GenUtils.getInstance().ToShortString(team_nm);
+                curr_row_str[TEAM_NAME_IDX] = GenUtils.ToShortString(team_nm);
                 curr_row_str[GOALS_CONCEDED_10_IDX]  = goals_conceded_by_team[team_nm].last10.ToString();
                 curr_row_str[GOALS_CONCEDED_6_IDX]   = goals_conceded_by_team[team_nm].last6.ToString();
                 curr_row_str[GOALS_CONCEDED_TOT_IDX] = goals_conceded_by_team[team_nm].total.ToString();

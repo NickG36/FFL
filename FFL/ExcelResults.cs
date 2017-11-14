@@ -30,13 +30,13 @@ namespace FFL
 
                 foreach (var curr_result in results_block.results)
                 {
-                    writer.Write(GenUtils.getInstance().ToLongString(curr_result.home_team) );
+                    writer.Write(GenUtils.ToLongString(curr_result.home_team) );
                     writer.Write(",");
                     writer.Write(curr_result.home_score);
                     writer.Write(",");
                     writer.Write(curr_result.away_score);
                     writer.Write(",");
-                    writer.WriteLine(GenUtils.getInstance().ToLongString(curr_result.away_team) );
+                    writer.WriteLine(GenUtils.ToLongString(curr_result.away_team) );
                 }
             }
         }
@@ -56,10 +56,10 @@ namespace FFL
                         string[] parts = curr_line.Split(',');
 
                         var curr_result = new 
-                            CommonTypes.Result(home_team  : GenUtils.getInstance().ToTeamName(parts[0]),
+                            CommonTypes.Result(home_team  : GenUtils.ToTeamName(parts[0]),
                                                home_score : ushort.Parse(parts[1]),
                                                away_score : ushort.Parse(parts[2]),
-                                               away_team  : GenUtils.getInstance().ToTeamName(parts[3]));
+                                               away_team  : GenUtils.ToTeamName(parts[3]));
 
                         result.Add(curr_result);
                     }
@@ -102,10 +102,10 @@ namespace FFL
                         string[] parts = curr_line.Split(',');
 
                         var curr_result = new
-                            CommonTypes.Result(home_team: GenUtils.getInstance().ToTeamName(parts[0]),
+                            CommonTypes.Result(home_team: GenUtils.ToTeamName(parts[0]),
                                                home_score: ushort.Parse(parts[1]),
                                                away_score: ushort.Parse(parts[2]),
-                                               away_team: GenUtils.getInstance().ToTeamName(parts[3]));
+                                               away_team: GenUtils.ToTeamName(parts[3]));
 
                         results_block.results.Add(curr_result);
                         pending_fixtures = true;

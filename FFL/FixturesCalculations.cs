@@ -29,17 +29,17 @@ namespace FFL
             foreach(CommonTypes.TwoTeams curr_res in all_fixtures)
             {
                 // Match for home team?
-                if (GenUtils.getInstance().ToTeamName(curr_res.home) == filter_team)
+                if (GenUtils.ToTeamName(curr_res.home) == filter_team)
                 {
                     var curr_fixture
-                        = new CommonTypes.Fixture(GenUtils.getInstance().ToTeamName(curr_res.away),
+                        = new CommonTypes.Fixture(GenUtils.ToTeamName(curr_res.away),
                                                   true);
                     result.Add(curr_fixture);
                 }
-                else if (GenUtils.getInstance().ToTeamName(curr_res.away) == filter_team)
+                else if (GenUtils.ToTeamName(curr_res.away) == filter_team)
                 {
                     var curr_fixture
-                        = new CommonTypes.Fixture(GenUtils.getInstance().ToTeamName(curr_res.home),
+                        = new CommonTypes.Fixture(GenUtils.ToTeamName(curr_res.home),
                                                   false);
                     result.Add(curr_fixture);
                 } // end else if

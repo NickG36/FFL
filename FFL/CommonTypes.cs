@@ -74,7 +74,7 @@ public class CommonTypes
             this.away_score = away_score;
         }
         public override string ToString() =>
-            GenUtils.getInstance().ToLongString(home_team) + " " + home_score + "-" + away_score + " " + GenUtils.getInstance().ToLongString(away_team);
+            GenUtils.ToLongString(home_team) + " " + home_score + "-" + away_score + " " + GenUtils.ToLongString(away_team);
 
     }
 
